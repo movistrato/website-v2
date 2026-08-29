@@ -1,0 +1,40 @@
+# ============================================================================== #
+# MOVISTRATO — PRODUCTION ROBOTS.TXT
+# Purpose: Web & Search Engine Indexing Directives
+# Website: https://movistrato.com
+# ============================================================================== #
+
+# 1. Default Rules for All Search Engine Crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /cdn-cgi/
+
+# 2. Google Crawlers (Full Crawling & Indexing)
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Googlebot-Video
+User-agent: Google-InspectionTool
+Allow: /
+Allow: /brand/
+Allow: /products/
+
+# 3. Microsoft Bing & DuckDuckGo
+User-agent: Bingbot
+User-agent: msnbot
+User-agent: DuckDuckBot
+Allow: /
+
+# 4. Modern AI Search Crawlers (SearchGPT, Perplexity, Claude, Applebot)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Claude-Web
+User-agent: Applebot
+Allow: /
+
+# 5. XML Sitemaps
+Sitemap: https://movistrato.com/sitemap-index.xml
+Sitemap: https://movistrato.com/sitemap-0.xml

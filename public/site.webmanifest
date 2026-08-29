@@ -1,0 +1,99 @@
+{
+  "id": "com.movistrato.website",
+  "name": "Movistrato — Software Products",
+  "short_name": "Movistrato",
+  "description": "Official corporate website of Movistrato. Technology that adapts to people.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
+  "theme_color": "#080806",
+  "background_color": "#f2f0e9",
+  "categories": [
+    "productivity",
+    "education",
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "/brand/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/favicon-48x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/brand/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/maskable-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/brand/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "FARO Product",
+      "short_name": "FARO",
+      "description": "Language-learning software product",
+      "url": "/en/products/faro",
+      "icons": [
+        {
+          "src": "/brand/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Technology",
+      "short_name": "Technology",
+      "description": "Movistrato engineering & adaptive systems",
+      "url": "/en/technology",
+      "icons": [
+        {
+          "src": "/brand/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with Movistrato",
+      "url": "/en/contact",
+      "icons": [
+        {
+          "src": "/brand/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

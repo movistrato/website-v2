@@ -1,0 +1,22 @@
+{
+  "Header": {
+    "product": "FARO",
+    "technology": "Tecnologia",
+    "company": "A Empresa",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "label": "MOVISTRATO / 001",
+    "title_1": "TECNOLOGIA",
+    "title_2": "QUE SE ADAPTA",
+    "title_3": "ÀS PESSOAS.",
+    "cta": "EXPLORAR FARO →",
+    "product_label": "PRODUTO / 01",
+    "product_name": "FARO",
+    "platforms_label": "PLATAFORMAS",
+    "platforms_list": "WEB · ANDROID · WINDOWS"
+  },
+  "Index": {
+    "title": "Movistrato"
+  }
+}
