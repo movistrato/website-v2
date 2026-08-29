@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -5,15 +6,27 @@ import { routing } from '@/i18n/routing';
 import { ThemeProvider } from 'next-themes';
 import { inter, newsreader, jetbrainsMono } from '@/lib/fonts';
 import { Header } from '@/components/navigation/Header';
+import { Footer } from '@/components/navigation/Footer';
 import '../globals.css';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Movistrato',
   description: 'Technology that adapts to people',
+  icons: {
+    icon: [
+      { url: '/brand/favicon.ico' },
+      { url: '/brand/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/brand/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
 };
 
 export default async function LocaleLayout({
@@ -39,6 +52,7 @@ export default async function LocaleLayout({
             <main className="min-h-screen">
               {children}
             </main>
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
