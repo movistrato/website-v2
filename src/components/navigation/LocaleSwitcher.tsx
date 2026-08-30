@@ -9,8 +9,21 @@ export function LocaleSwitcher() {
   const pathname = usePathname();
 
   const handleLocaleChange = (newLocale: string) => {
-    // Preserve current path but switch locale
-    router.replace(pathname, { locale: newLocale });
+    if (newLocale === locale) return;
+    
+    const currentScrollY = typeof window !== "undefined" ? window.scrollY : 0;
+    
+    // Preserve current path but switch locale without resetting scroll
+    router.replace(pathname, { locale: newLocale, scroll: false });
+
+    if (typeof window !== "undefined") {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "instant" });
+      });
+      setTimeout(() => {
+        window.scrollTo({ top: currentScrollY, behavior: "instant" });
+      }, 50);
+    }
   };
 
   return (

@@ -7,16 +7,63 @@
   },
   "Hero": {
     "label": "MOVISTRATO / 001",
+    "system_status": "Integrated System",
     "title_1": "TECHNOLOGY",
     "title_2": "THAT ADAPTS",
     "title_3": "TO PEOPLE.",
     "cta": "EXPLORE FARO",
-    "product_label": "PRODUCT / 01",
+    "product_label": "Product",
     "product_name": "FARO",
-    "platforms_label": "PLATFORMS",
+    "focus_label": "Focus",
+    "focus_value": "Learning",
+    "platforms_label": "Platforms",
+    "platforms_badge": "NATIVE",
     "platforms_list": "WEB · ANDROID · WINDOWS",
     "abstract": "Movistrato is a software research and development company focused on human learning.",
-    "abstract_status": "Status: Active"
+    "abstract_status": "Status: In Development",
+    "dev_badge": "[ DEV ]"
+  },
+  "Manifesto": {
+    "title": "Software shouldn't force everyone down the same path.",
+    "body": "We believe in software that uses context, interaction, and intentional engineering to create experiences capable of becoming more relevant over time.",
+    "label": "THESIS / 001",
+    "details": {
+      "item1_title": "CONTINUOUS ADAPTATION",
+      "item1_body": "Interfaces that react to the user's fluency. The system adjusts its complexity based on the human learning curve, ensuring it is never too basic nor too overwhelming.",
+      "item2_title": "UBIQUITOUS CONTINUITY",
+      "item2_body": "A single experience across all devices. Seamless transitions between web, mobile, and desktop, maintaining strict context in fractions of a second.",
+      "item3_title": "NATIVE PERFORMANCE",
+      "item3_body": "Optimized architecture and pristine rendering. Fewer abstractions, less latency. We build computing engines to run natively on each operating system."
+    },
+    "method_label": "THE MOVISTRATO METHOD",
+    "method_title": "Contextual Engineering.",
+    "method_body": "We don't build templates. We analyze how humans absorb information and design visual algorithms that respond to that pattern. Every millisecond of animation, every pixel of typography, and every data architecture decision serves a single purpose: to make technology invisible."
+  },
+  "Product": {
+    "label": "PRODUCT / 01",
+    "name": "FARO",
+    "description": "A language learning platform centered around context, continuity, and adaptation.",
+    "platforms": "WEB · ANDROID · WINDOWS",
+    "cta": "EXPLORE FARO",
+    "features": {
+      "f1_title": "Contextual Engine",
+      "f1_body": "The heart of FARO. A deterministic algorithm that analyzes retained vocabulary and reconstructs study sessions in real-time. Nothing is random.",
+      "f2_title": "Native Rendering",
+      "f2_body": "Built from scratch for Windows and Android, avoiding sluggish web-wrappers. FARO utilizes native system APIs to guarantee the famous 120 frames per second.",
+      "f3_title": "Adaptive Design",
+      "f3_body": "An interface that grows with you. As your level increases, visual support elements disappear, focusing you on the raw challenge."
+    }
+  },
+  "AdaptiveSystem": {
+    "label": "SYSTEM / IN DEVELOPMENT",
+    "title": "Software should shape itself to you.",
+    "description": "An adaptive system learns from every interaction, using context to adjust complexity and progression without manual intervention.",
+    "node_user": "USER",
+    "node_interaction": "INTERACTION",
+    "node_signals": "SIGNALS",
+    "node_context": "CONTEXT",
+    "node_adaptation": "ADAPTATION",
+    "node_experience": "NEXT EXPERIENCE"
   },
   "Index": {
     "title": "Movistrato"

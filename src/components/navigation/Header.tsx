@@ -9,7 +9,8 @@ export function Header() {
   const t = useTranslations("Header");
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-colors">
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-md border-b border-transparent pointer-events-none -z-10" aria-hidden="true" />
       <Container className="px-6 lg:px-12 max-w-none">
         <div className="flex items-center justify-between h-[72px] lg:h-[96px] w-full">
           

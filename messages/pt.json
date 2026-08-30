@@ -7,16 +7,63 @@
   },
   "Hero": {
     "label": "MOVISTRATO / 001",
+    "system_status": "Sistema Integrado",
     "title_1": "TECNOLOGIA",
     "title_2": "QUE SE ADAPTA",
     "title_3": "ÀS PESSOAS.",
     "cta": "EXPLORAR FARO",
-    "product_label": "PRODUTO / 01",
+    "product_label": "Produto",
     "product_name": "FARO",
-    "platforms_label": "PLATAFORMAS",
+    "focus_label": "Foco",
+    "focus_value": "Aprendizagem",
+    "platforms_label": "Plataformas",
+    "platforms_badge": "NATIVAS",
     "platforms_list": "WEB · ANDROID · WINDOWS",
     "abstract": "A Movistrato é uma empresa de investigação e desenvolvimento de software focada na aprendizagem humana.",
-    "abstract_status": "Status: Activo"
+    "abstract_status": "Status: Em Desenvolvimento",
+    "dev_badge": "[ DEV ]"
+  },
+  "Manifesto": {
+    "title": "O software não devia obrigar todas as pessoas a seguir o mesmo caminho.",
+    "body": "Acreditamos num software que utiliza contexto, interação e engenharia intencional para criar experiências capazes de se tornarem mais relevantes ao longo do tempo.",
+    "label": "TESE / 001",
+    "details": {
+      "item1_title": "ADAPTAÇÃO CONTÍNUA",
+      "item1_body": "Interfaces que reagem à fluência do utilizador. O sistema ajusta a sua complexidade com base na curva de aprendizagem humana, garantindo que nunca é demasiado básico nem demasiado esmagador.",
+      "item2_title": "CONTINUIDADE UBÍQUA",
+      "item2_body": "Uma única experiência em todos os dispositivos. Transições perfeitas entre web, mobile e desktop, mantendo o contexto rigoroso em frações de segundo.",
+      "item3_title": "PERFORMANCE NATIVA",
+      "item3_body": "Arquitetura otimizada e renderização imaculada. Menos abstrações, menos latência. Construímos motores de cálculo para rodar nativamente em cada sistema operativo."
+    },
+    "method_label": "O MÉTODO MOVISTRATO",
+    "method_title": "A Engenharia do Contexto.",
+    "method_body": "Não construímos templates. Analisamos a forma como os humanos absorvem informação e desenhamos algoritmos visuais que respondem a esse padrão. Cada milissegundo de animação, cada pixel de tipografia e cada decisão de arquitetura de dados serve um único propósito: tornar a tecnologia invisível."
+  },
+  "Product": {
+    "label": "PRODUTO / 01",
+    "name": "FARO",
+    "description": "Uma plataforma de aprendizagem de línguas centrada em contexto, continuidade e adaptação.",
+    "platforms": "WEB · ANDROID · WINDOWS",
+    "cta": "EXPLORAR FARO",
+    "features": {
+      "f1_title": "Motor Contextual",
+      "f1_body": "O coração do FARO. Um algoritmo determinístico que analisa o vocabulário retido e reconstrói as sessões de estudo em tempo real. Nada é aleatório.",
+      "f2_title": "Renderização Nativa",
+      "f2_body": "Construído do zero para Windows e Android, evitando web-wrappers lentos. O FARO utiliza as APIs nativas do sistema para garantir os famosos 120 fotogramas por segundo.",
+      "f3_title": "Design Adaptativo",
+      "f3_body": "Uma interface que cresce contigo. À medida que o teu nível aumenta, os elementos de suporte visual desaparecem, focando-te no desafio cru."
+    }
+  },
+  "AdaptiveSystem": {
+    "label": "SISTEMA / EM DESENVOLVIMENTO",
+    "title": "O software deve moldar-se a ti.",
+    "description": "Um sistema adaptativo aprende com cada interação, utilizando o contexto para ajustar a complexidade e a progressão sem intervenção manual.",
+    "node_user": "UTILIZADOR",
+    "node_interaction": "INTERAÇÃO",
+    "node_signals": "SINAIS",
+    "node_context": "CONTEXTO",
+    "node_adaptation": "ADAPTAÇÃO",
+    "node_experience": "PRÓXIMA EXPERIÊNCIA"
   },
   "Index": {
     "title": "Movistrato"
