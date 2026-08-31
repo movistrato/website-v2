@@ -18,10 +18,11 @@ export const metadata: Metadata = {
   description: 'Technology that adapts to people',
   icons: {
     icon: [
+      { url: '/brand/favicon-dark-32x32.png', sizes: '32x32', type: 'image/png', media: '(prefers-color-scheme: dark)' },
+      { url: '/brand/favicon-dark-16x16.png', sizes: '16x16', type: 'image/png', media: '(prefers-color-scheme: dark)' },
+      { url: '/brand/favicon-light-32x32.png', sizes: '32x32', type: 'image/png', media: '(prefers-color-scheme: light)' },
+      { url: '/brand/favicon-light-16x16.png', sizes: '16x16', type: 'image/png', media: '(prefers-color-scheme: light)' },
       { url: '/brand/favicon.ico' },
-      { url: '/brand/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/brand/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/brand/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
     ],
     apple: [
       { url: '/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },

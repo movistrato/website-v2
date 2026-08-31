@@ -24,7 +24,7 @@
     "dev_badge": "[ DEV ]"
   },
   "Manifesto": {
-    "title": "Software shouldn't force everyone down the same path.",
+    "title": "Software shouldn't force everyone down <accent>the same path.</accent>",
     "body": "We believe in software that uses context, interaction, and intentional engineering to create experiences capable of becoming more relevant over time.",
     "label": "THESIS / 001",
     "details": {
@@ -52,11 +52,32 @@
       "f2_body": "Built from scratch for Windows and Android, avoiding sluggish web-wrappers. FARO utilizes native system APIs to guarantee the famous 120 frames per second.",
       "f3_title": "Adaptive Design",
       "f3_body": "An interface that grows with you. As your level increases, visual support elements disappear, focusing you on the raw challenge."
+    },
+    "specs": {
+      "status_label": "STATUS",
+      "status_value": "[ IN DEVELOPMENT ]",
+      "version_label": "VERSION",
+      "version_value": "01.00.00-BETA",
+      "location_label": "LOCATION",
+      "location_value": "EU / PORTUGAL"
     }
+  },
+  "Engineering": {
+    "label": "ENGINEERING / CORE",
+    "title": "<accent>Architecture</accent> before complexity.",
+    "description": "Great engineering means making complexity disappear. We build on solid, deliberate foundations—prioritizing reliability, performance, and software prepared to evolve.",
+    "description2": "Every line of code serves a purpose. We reject unnecessary abstractions, favoring explicit contracts and predictable data flows across the entire stack.",
+    "description3": "Built to last, not just to launch. Our architecture is designed to absorb future complexity without degrading performance or developer experience.",
+    "pillar1_title": "Structural Precision",
+    "pillar1_desc": "Strict component boundaries and unambiguous data contracts. We avoid abstract layers that obscure the underlying architecture.",
+    "pillar2_title": "Zero-Trust State",
+    "pillar2_desc": "Predictable data flow without unmanaged side-effects. Every state change is explicit, traceable, and fully controlled.",
+    "pillar3_title": "Bare-Metal Efficiency",
+    "pillar3_desc": "Maximum output, minimum overhead. We write code that respects the hardware it runs on, eliminating unnecessary runtime costs."
   },
   "AdaptiveSystem": {
     "label": "SYSTEM / IN DEVELOPMENT",
-    "title": "Software should shape itself to you.",
+    "title": "<software>Software</software> should shape itself to you.",
     "description": "An adaptive system learns from every interaction, using context to adjust complexity and progression without manual intervention.",
     "node_user": "USER",
     "node_interaction": "INTERACTION",
@@ -65,8 +86,93 @@
     "node_adaptation": "ADAPTATION",
     "node_experience": "NEXT EXPERIENCE"
   },
+  "Platforms": {
+    "label": "PLATFORMS / CONTINUITY",
+    "title": "The experience <highlight>follows</highlight> the person.",
+    "description": "We believe software should not be confined to a <highlight>single device</highlight>. FARO is designed to exist seamlessly across the platforms you use, <underline>maintaining context</underline> and progressing with you.",
+    "available_label": "AVAILABLE",
+    "planned_label": "PLANNED / NEXT",
+    "web": "Web",
+    "android": "Android",
+    "windows": "Windows",
+    "ios": "iOS",
+    "macos": "macOS",
+    "linux": "Linux",
+    "card1_label": "SYNC",
+    "card1_value": "< 10ms",
+    "card2_label": "STATE",
+    "card2_value": "Zero-Trust",
+    "feature1_title": "Native Architecture",
+    "feature1_desc": "No web wrappers. Built specifically for each OS to ensure 120fps performance and minimal battery impact.",
+    "feature2_title": "Instant Sync",
+    "feature2_desc": "Your context moves with you. Resume exactly where you left off on any device with sub-10ms synchronization.",
+    "feature3_title": "Offline Engine",
+    "feature3_desc": "FARO runs locally. Full access to the contextual engine even when completely disconnected from the network."
+  },
+  "Company": {
+    "label": "07 / COMPANY",
+    "statement_prefix": "FARO IS THE ",
+    "statement_highlight": "FIRST CHAPTER.",
+    "description": "Movistrato is a software company built to develop digital products with technical rigor and longevity. FARO is our first product — and the starting point for everything we want to build.",
+    "fact_founded": "2026",
+    "fact_location": "PORTUGAL",
+    "fact_focus": "SOFTWARE PRODUCTS",
+    "cta": "ABOUT MOVISTRATO"
+  },
   "Index": {
     "title": "Movistrato"
+  },
+  "Identity": {
+    "name": {
+      "intro": "The name did not begin with a definition. The company gave it one.",
+      "movi": {
+        "label": "01 / MOVEMENT",
+        "text": "Progress, adaptation and evolution."
+      },
+      "strato": {
+        "label": "02 / STRUCTURE",
+        "text": "The layers and foundations on which software is built."
+      },
+      "conclusion": "MOVEMENT BUILT ON STRUCTURE.",
+      "transition": "THE SAME IDEA CONTINUES IN THE MARK."
+    },
+    "title": "A SYMBOL WITH <marker>PORTUGUESE ROOTS</marker>",
+    "label": "IDENTITY / THE MARK",
+    "chapters": {
+      "0": {
+        "title": "00. Origins",
+        "text": "Movistrato's identity is born from the same place as the company: Portugal. Our emblem is a contemporary interpretation of Portuguese heraldic tradition. The shield and the five quinas establish a subtle connection to our origins, not as a reproduction of national symbols, but as a tribute reinterpreted through the language that defines us: engineering and technology."
+      },
+      "1": {
+        "title": "01. The Quinas",
+        "text": "The five quinas represent five principles upon which we want to build Movistrato: <blue>Engineering</blue>, <gold>Ambition</gold>, <red>Sacrifice</red>, <stone>Integrity</stone>, and <emerald>Innovation</emerald>. Different values, united within the same system."
+      },
+      "2": {
+        "title": "02. Circuits",
+        "text": "Running between them are lines inspired by electronic circuits. They represent the invisible connections behind technology — architecture, code, data, and systems working together to transform an idea into a product. Their symmetry translates the rigor and precision we seek to apply to software engineering."
+      },
+      "3": {
+        "title": "03. The Core",
+        "text": "At the center, the very geometry of the emblem hides an 'M'. It wasn't placed as a conventional letter: it's part of the structure. A reference to Movistrato that reveals itself only to those who look closely."
+      },
+      "4": {
+        "title": "04. The Crown",
+        "text": "Above the shield rises a geometric crown. For us, it doesn't represent status or wealth. It represents ambition — the will to constantly elevate what we build and to compete beyond the borders where we started."
+      },
+      "5": {
+        "title": "05. The System",
+        "text": "Gold appears only in small points of the symbol. It is deliberately restrained: it represents energy, knowledge, creation, and the moments when an idea comes to life. Graphite conveys structure and precision; white space preserves clarity and simplicity. The result seeks to reflect Movistrato's own philosophy: complexity on the inside, simplicity on the outside."
+      },
+      "6": {
+        "title": "06. The Manifesto",
+        "text": "A Portuguese symbol without needing to show a flag.<br/><br/>A technological symbol without needing to write “software”.<br/><br/>A Movistrato symbol without needing to write its name.<br/><br/>We were born in Portugal. We build for the world."
+      }
+    }
+  },
+  "Contact": {
+    "headline": "THE NEXT CHAPTER STARTS WITH A CONVERSATION.",
+    "cta": "CONTACT MOVISTRATO",
+    "label": "CONTACT / INITIATION"
   },
   "Footer": {
     "product": "PRODUCT",

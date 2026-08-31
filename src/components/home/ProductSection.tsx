@@ -95,23 +95,38 @@ export function ProductSection() {
           {/* Base Layer: Text */}
           <motion.div 
             variants={textVariants}
-            className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8"
+            className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-8"
           >
             <div className="flex flex-col gap-6 w-full lg:w-[60%] relative">
               {/* Technical grid marker */}
-              <div className="absolute -top-10 -left-6 hidden lg:flex opacity-20 font-mono text-[8px] tracking-widest text-brand-gold">
-                [ 01_FARO_PRODUCT_REVEAL ]
-              </div>
+              
               <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
                 {t('label')}
               </span>
-              <h2 className="font-display text-[4rem] sm:text-[5rem] lg:text-[8rem] leading-[0.85] tracking-tighter text-foreground uppercase">
-                {t('name')}
+              <h2 className="font-display text-[4rem] sm:text-[5rem] lg:text-[8rem] leading-[0.85] tracking-tighter text-foreground uppercase flex items-baseline">
+                <span>{t('name')}</span>
+                <span className="text-brand-gold text-[0.25em] sm:text-[0.3em] font-mono ml-4 font-normal tracking-widest">[ 01 ]</span>
               </h2>
+
+              {/* Technical specifications underneath FARO on PC/large screens */}
+              <div className="hidden lg:flex flex-col gap-3 mt-8 font-mono text-[10px] tracking-widest text-muted-foreground/80 border-t border-border/50 pt-6 w-fit">
+                <div className="flex gap-12 justify-between min-w-[260px]">
+                  <span>{t('specs.status_label')}</span>
+                  <span className="text-brand-gold font-semibold">{t('specs.status_value')}</span>
+                </div>
+                <div className="flex gap-12 justify-between min-w-[260px]">
+                  <span>{t('specs.version_label')}</span>
+                  <span className="text-foreground">{t('specs.version_value')}</span>
+                </div>
+                <div className="flex gap-12 justify-between min-w-[260px]">
+                  <span>{t('specs.location_label')}</span>
+                  <span className="text-foreground">{t('specs.location_value')}</span>
+                </div>
+              </div>
             </div>
             
-            <div className="flex flex-col gap-8 w-full lg:w-[35%] mb-2 lg:mb-4">
+            <div className="flex flex-col gap-8 w-full lg:w-[35%] mb-2 lg:mb-4 lg:pt-8">
               <p className="font-sans text-base lg:text-xl text-muted-foreground leading-relaxed max-w-md">
                 {t('description')}
               </p>
@@ -151,69 +166,130 @@ export function ProductSection() {
             </div>
           </motion.div>
 
-          {/* Overlay Layer: Images */}
-          <div className="relative w-full flex items-end justify-center">
+          {/* Overlay Layer: 3D Responsive Mockups */}
+          {/* Overlay Layer: Clean High-End Mockups */}
+          <div className="relative w-full pt-12 pb-20 lg:pt-24 lg:pb-32 px-4">
             
-            {/* Desktop Image */}
-            <motion.div 
-              variants={desktopImageVariants}
-              className="relative w-[120%] lg:w-[90%] aspect-[4/3] lg:aspect-[21/9] origin-bottom shadow-[0_30px_70px_rgba(0,0,0,0.12)] dark:shadow-[0_30px_70px_rgba(0,0,0,0.7)]"
-            >
-               <div className="w-full h-full rounded-none lg:rounded-t-sm overflow-hidden border border-border/80 ring-1 ring-border/60 bg-surface flex flex-col pointer-events-auto">
-                 {/* Decorative UI Bar */}
-                 <div className="w-full h-8 bg-surface/80 backdrop-blur-md border-b border-border/50 flex items-center px-4 gap-2 shrink-0">
-                    <div className="w-2 h-2 rounded-none bg-border/80" />
-                    <div className="w-2 h-2 rounded-none bg-border/80" />
-                    <div className="w-2 h-2 rounded-none bg-border/80" />
-                 </div>
-                 <div className="relative w-full flex-1">
-                   <Image
-                     src="/products/faro/faro-desktop-dashboard.png"
-                     alt="FARO Dashboard Interface"
-                     fill
-                     className="object-cover object-left-top"
-                     sizes="100vw"
-                     priority
-                   />
-                 </div>
-               </div>
-            </motion.div>
+            {/* Central Canvas Wrapper - Locks proportions and positioning for all devices */}
+            <div className="relative w-[95%] sm:w-[85%] lg:w-[75%] max-w-[850px] mx-auto">
+              
+              {/* Floating UI Badge - Left */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-[-10%] sm:top-[-5%] left-[5%] z-20 pointer-events-none hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-sm"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Engine: Native</span>
+              </motion.div>
 
-            {/* Mobile Image overlay - High Precision Ring & Focused Elevation */}
-            <motion.div 
-              variants={mobileImageVariants}
-              className="absolute right-[-5%] lg:right-[5%] bottom-[10%] w-[50%] lg:w-[30%] aspect-[4/3] pointer-events-auto shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)]"
-            >
-               <div className="w-full h-full rounded-none overflow-hidden border border-border ring-1 ring-foreground/15 dark:ring-white/20 bg-surface">
-                 <Image
-                   src="/products/faro/faro-desktop-learning.png"
-                   alt="FARO Learning Interface"
-                   fill
-                   className="object-cover object-center scale-110 lg:scale-125"
-                   sizes="(max-width: 768px) 60vw, 35vw"
-                 />
-               </div>
-            </motion.div>
-            
-            {/* CTA Overlay */}
-            <motion.div 
-              variants={ctaVariants}
-              className="absolute left-0 lg:left-12 bottom-[10%] z-30 pointer-events-auto"
-            >
-               <div className="flex flex-col gap-4 p-6 bg-background border border-border/50 rounded-none shadow-xl">
-                 <span className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase">
-                   {t('platforms')}
-                 </span>
-                 <Link 
-                   href="/faro" 
-                   className="group flex items-center gap-3 font-mono text-xs tracking-widest uppercase text-foreground hover:text-brand-gold transition-colors focus-visible:outline-none w-fit"
-                 >
-                   <span>{t('cta')}</span>
-                   <span className="text-xl font-sans font-light leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-                 </Link>
-               </div>
-            </motion.div>
+              {/* Floating UI Badge - Right */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute top-[15%] right-[-5%] sm:right-[-10%] z-20 pointer-events-none hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-sm"
+              >
+                <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Latency</span>
+                <span className="font-mono text-[10px] text-brand-gold">&lt; 16ms</span>
+              </motion.div>
 
+              {/* Desktop Mockup (Laptop) */}
+              <motion.div 
+                variants={desktopImageVariants}
+                className="relative w-full flex flex-col items-center z-10 group"
+              >
+                {/* Laptop Screen Bezel */}
+                <div className="relative w-full aspect-[16/10] bg-[#0a0a0a] rounded-t-xl sm:rounded-t-2xl lg:rounded-t-3xl p-[1.5%] sm:p-[2%] border border-[#333] shadow-md flex flex-col justify-between overflow-hidden">
+                  
+                  {/* Screen Glare (Glass reflection) */}
+                  <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-white/0 via-white/[0.02] to-white/[0.08] mix-blend-overlay" />
+                  <div className="absolute -inset-[100%] z-20 pointer-events-none bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.05)_50%,transparent_55%)] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[2s] ease-in-out" />
+
+                  {/* Webcam */}
+                  <div className="absolute top-[1.5%] sm:top-[2%] left-1/2 -translate-x-1/2 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-black ring-1 ring-white/20 z-30" />
+                  
+                  {/* Screen inner content */}
+                  <div className="relative w-full h-full rounded-sm sm:rounded-md overflow-hidden bg-background border border-white/10 mt-[1%] z-10 shadow-inner">
+                    <Image
+                      src="/products/faro/faro-desktop-dashboard.png"
+                      alt="FARO Dashboard Interface"
+                      fill
+                      className="object-cover object-left-top"
+                      sizes="(max-width: 768px) 100vw, 85vw"
+                      priority
+                    />
+                  </div>
+                  
+                  {/* Macbook bottom bezel logo area */}
+                  <div className="absolute bottom-1 sm:bottom-1.5 lg:bottom-2 left-1/2 -translate-x-1/2 font-mono text-[4px] sm:text-[6px] text-white/30 uppercase tracking-widest hidden sm:block z-30">
+                    MOVISTRATO
+                  </div>
+                </div>
+                
+                {/* Laptop Base */}
+                <div className="relative w-[116%] h-2 sm:h-3 lg:h-4 bg-gradient-to-b from-[#e5e5e5] to-[#888888] dark:from-[#555] dark:to-[#111] rounded-b-xl sm:rounded-b-2xl lg:rounded-b-3xl border-t border-[#fff] dark:border-[#777] shadow-xl dark:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.6)] flex justify-center z-20">
+                  <div className="absolute top-0 w-full h-px bg-white/50 dark:bg-white/10" />
+                  <div className="w-[15%] h-1 sm:h-1.5 lg:h-2 bg-[#b3b3b3] dark:bg-[#0a0a0a] rounded-b-md shadow-[inset_0_1px_3px_rgba(0,0,0,0.5)]" />
+                </div>
+              </motion.div>
+
+              {/* Mobile Mockup (Phone) - Positioned relative to the canvas */}
+              <motion.div 
+                variants={mobileImageVariants}
+                className="absolute bottom-[-10%] sm:bottom-[-15%] left-[-2%] sm:left-[-8%] w-[22%] min-w-[75px] max-w-[180px] aspect-[9/19.5] z-30"
+              >
+                <motion.div 
+                  animate={{ y: [0, -12, 0] }} 
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative w-full h-full"
+                >
+                  {/* Phone Frame */}
+                  <div className="relative w-full h-full bg-gradient-to-br from-[#e5e5e5] to-[#777777] dark:from-[#666] dark:to-[#0a0a0a] rounded-[15%] sm:rounded-[2.1rem] lg:rounded-[2.6rem] p-[2px] sm:p-[3px] shadow-lg dark:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.5)]">
+                    
+                    <div className="relative w-full h-full bg-[#0a0a0a] rounded-[12%] sm:rounded-[2rem] lg:rounded-[2.5rem] p-[3px] sm:p-[6px] lg:p-[8px] border border-black overflow-hidden ring-1 ring-white/10">
+                      
+                      <div className="absolute inset-0 z-30 pointer-events-none bg-gradient-to-tr from-white/0 via-white/[0.04] to-white/[0.1] mix-blend-overlay" />
+                      
+                      <div className="absolute top-[4px] sm:top-[8px] lg:top-[12px] left-1/2 -translate-x-1/2 w-[35%] h-[8px] sm:h-[16px] lg:h-[20px] bg-black rounded-full z-20 flex justify-center items-center gap-1 sm:gap-1.5 shadow-md border border-white/10">
+                         <div className="w-1 h-1 rounded-full bg-[#1a1a1a] ring-1 ring-white/10" />
+                         <div className="w-1.5 sm:w-2.5 h-1 rounded-full bg-[#0a0a0a] ring-1 ring-white/5" />
+                      </div>
+
+                      <div className="relative w-full h-full rounded-[10%] sm:rounded-[1.6rem] lg:rounded-[2rem] overflow-hidden bg-background border border-white/5">
+                        <Image
+                          src="/products/faro/faro-desktop-learning.png"
+                          alt="FARO Learning Interface"
+                          fill
+                          className="object-cover object-left lg:object-center"
+                          sizes="(max-width: 768px) 30vw, 15vw"
+                        />
+                      </div>
+
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+              
+              {/* CTA Overlay - Positioned relative to the canvas */}
+              <motion.div 
+                variants={ctaVariants}
+                className="absolute bottom-[5%] sm:bottom-[-5%] right-[-2%] sm:right-[-10%] z-40 pointer-events-auto"
+              >
+                 <div className="flex flex-col gap-2 p-3 sm:p-5 lg:p-6 bg-background/80 dark:bg-background/40 backdrop-blur-xl border border-border/50 shadow-[0_15px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.6)] rounded-xl sm:rounded-2xl ring-1 ring-white/10 dark:ring-white/5">
+                   <span className="font-mono text-[8px] sm:text-[10px] tracking-widest text-muted-foreground uppercase">
+                     {t('platforms')}
+                   </span>
+                   <Link 
+                     href="/faro" 
+                     className="group flex items-center gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs tracking-widest uppercase text-foreground hover:text-brand-gold transition-colors focus-visible:outline-none w-fit"
+                   >
+                     <span>{t('cta')}</span>
+                     <span className="text-lg sm:text-xl font-sans font-light leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
+                   </Link>
+                 </div>
+              </motion.div>
+
+            </div>
           </div>
 
         </motion.div>

@@ -4,38 +4,45 @@ import { motion } from 'framer-motion';
 
 export function TickerMarquee() {
   const items = [
-    "// MOVISTRATO.SYS [ STATUS: ACTIVE ]",
-    "// 120 FPS NATIVE ARCHITECTURE",
-    "// CONTEXTUAL LEARNING ALGORITHMS",
-    "// ZERO WEB WRAPPERS",
-    "// CONTINUOUS ADAPTATION",
-    "// NATIVE PERFORMANCE",
-    "// UBIQUITOUS CONTINUITY",
-    "// ENGINEERED IN EUROPE"
+    { text: "MOVISTRATO.SYS", isSerif: false },
+    { text: "Continuous Adaptation", isSerif: true },
+    { text: "120 FPS NATIVE", isSerif: false },
+    { text: "Contextual learning", isSerif: true },
+    { text: "ZERO WEB WRAPPERS", isSerif: false },
+    { text: "Ubiquitous Continuity", isSerif: true },
+    { text: "Engineered in Europe", isSerif: true }
   ];
 
-  // Repeat items to ensure smooth infinite scrolling
-  const allItems = [...items, ...items, ...items];
+  // Duplicate items to ensure smooth infinite scrolling
+  const allItems = [...items, ...items];
 
   return (
-    <div className="w-full h-8 flex items-center bg-brand-gold/5 border-b border-border/20 overflow-hidden relative z-10">
+    <div className="w-full h-10 flex items-center border-y border-foreground/10 dark:border-foreground/5 overflow-hidden relative z-10 bg-transparent">
       {/* Edge Gradients */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
       
       <motion.div 
-        animate={{ x: [0, -1000] }}
+        animate={{ x: ["0%", "-50%"] }}
         transition={{ 
-          duration: 30, 
+          duration: 25, 
           ease: "linear", 
           repeat: Infinity 
         }}
-        className="flex items-center gap-8 whitespace-nowrap min-w-max pl-4"
+        className="flex items-center gap-12 whitespace-nowrap"
       >
-        {allItems.map((text, i) => (
-          <div key={i} className="flex items-center gap-8">
-            <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold/80">{text}</span>
-            <div className="w-1.5 h-1.5 bg-border/40 rounded-full" />
+        {allItems.map((item, i) => (
+          <div key={i} className="flex items-center gap-12">
+            {item.isSerif ? (
+              <span className="font-display italic text-xs lg:text-sm text-foreground tracking-wide">
+                {item.text}
+              </span>
+            ) : (
+              <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-brand-gold/90 font-medium">
+                {item.text}
+              </span>
+            )}
+            <span className="text-foreground/20 text-[10px] font-mono select-none">┼</span>
           </div>
         ))}
       </motion.div>

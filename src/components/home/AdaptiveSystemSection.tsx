@@ -126,7 +126,14 @@ export function AdaptiveSystemSection() {
                 {t('label')}
               </span>
               <h2 className="font-display text-4xl sm:text-5xl lg:text-[4.5rem] leading-[0.9] tracking-tighter text-foreground">
-                {t('title')}
+                {t.rich('title', {
+                  software: (chunks) => (
+                    <span className="inline-flex items-center gap-2 px-3 py-0.5 rounded-none border border-brand-gold/60 bg-brand-gold/10 text-brand-gold font-mono text-[0.6em] align-middle tracking-widest uppercase mr-2 shadow-[0_0_15px_rgba(217,166,46,0.15)]">
+                      <span className="w-1.5 h-1.5 bg-brand-gold rounded-none animate-pulse" />
+                      {chunks}
+                    </span>
+                  )
+                })}
               </h2>
             </motion.div>
 
@@ -149,25 +156,25 @@ export function AdaptiveSystemSection() {
           </div>
 
           {/* Mobile/Tablet In-Flow Wave (Precisely between Text and Timeline) */}
-          <div className="block lg:hidden relative w-full h-16 sm:h-20 overflow-hidden pointer-events-none -my-2">
-            <svg className="w-[300%] h-full" viewBox="0 0 1200 200" preserveAspectRatio="none">
+          <div className="block lg:hidden relative w-full h-24 sm:h-28 overflow-hidden pointer-events-none -my-4">
+            <svg className="w-[300%] h-full overflow-visible" viewBox="0 0 1200 200" preserveAspectRatio="none">
               <motion.path 
-                d="M 0 100 Q 150 200 300 100 T 600 100 T 900 100 T 1200 100 T 1500 100 T 1800 100 T 2100 100 T 2400 100 T 2700 100 T 3000 100"
+                d="M 0 100 Q 75 220 150 100 T 300 100 T 450 100 T 600 100 T 750 100 T 900 100 T 1050 100 T 1200 100 T 1350 100 T 1500 100 T 1650 100 T 1800 100 T 1950 100 T 2100 100 T 2250 100 T 2400 100"
                 fill="none" 
                 stroke="var(--brand-gold)" 
-                strokeWidth="1.5"
-                className="opacity-70 dark:opacity-60"
-                animate={reduce ? {} : { x: [0, -600] }}
-                transition={{ repeat: Infinity, duration: 3.5, ease: "linear" }}
+                strokeWidth="3"
+                className="opacity-95 dark:opacity-90"
+                animate={reduce ? {} : { x: [0, -300] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
               />
               <motion.path 
-                d="M 0 120 Q 200 220 400 120 T 800 120 T 1200 120 T 1600 120 T 2000 120 T 2400 120 T 2800 120 T 3200 120 T 3600 120"
+                d="M 0 120 Q 100 240 200 120 T 400 120 T 600 120 T 800 120 T 1000 120 T 1200 120 T 1400 120 T 1600 120 T 1800 120 T 2000 120 T 2200 120 T 2400 120"
                 fill="none" 
                 stroke="currentColor" 
-                strokeWidth="1"
-                className="opacity-30 dark:opacity-20 text-foreground"
-                animate={reduce ? {} : { x: [0, -800] }}
-                transition={{ repeat: Infinity, duration: 5.5, ease: "linear" }}
+                strokeWidth="1.75"
+                className="opacity-45 dark:opacity-35 text-foreground"
+                animate={reduce ? {} : { x: [0, -400] }}
+                transition={{ repeat: Infinity, duration: 1.8, ease: "linear" }}
               />
             </svg>
           </div>

@@ -57,9 +57,6 @@ export function ManifestoSection() {
   const t = useTranslations('Manifesto');
   const reduce = useReducedMotion();
 
-  // Split title into words
-  const titleWords = t('title').split(" ");
-
   return (
     <section className="relative w-full min-h-screen py-12 lg:py-20 bg-background overflow-hidden flex flex-col justify-center">
       
@@ -128,17 +125,15 @@ export function ManifestoSection() {
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-brand-gold/10 dark:bg-brand-gold/10 blur-[120px] rounded-full pointer-events-none z-0"
               />
   
-              <h2 className="font-display text-[2.75rem] sm:text-5xl lg:text-[5.5rem] leading-[0.9] tracking-tighter text-foreground relative z-10 flex flex-wrap">
-                {titleWords.map((word, i) => (
-                  <motion.span 
-                    variants={wordVariants}
-                    key={i} 
-                    className="inline-block mr-[0.25em] mb-[0.1em] origin-bottom"
-                  >
-                    {word}
-                  </motion.span>
-                ))}
-              </h2>
+              <motion.h2 variants={wordVariants} className="font-display text-[2.75rem] sm:text-5xl lg:text-[5.5rem] leading-[0.9] tracking-tighter text-foreground relative z-10">
+                {t.rich('title', {
+                  accent: (chunks) => (
+                    <span className="relative inline-block text-brand-gold italic px-2 py-0.5 bg-brand-gold/10 border-b-2 border-brand-gold font-normal">
+                      {chunks}
+                    </span>
+                  )
+                })}
+              </motion.h2>
             </div>
           </div>
 

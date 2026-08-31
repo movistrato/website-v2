@@ -7,6 +7,11 @@ import { ScrollExitWrapper } from '@/components/motion/ScrollExit';
 import { ManifestoSection } from '@/components/home/ManifestoSection';
 import { ProductSection } from '@/components/home/ProductSection';
 import { AdaptiveSystemSection } from '@/components/home/AdaptiveSystemSection';
+import { PlatformsSection } from '@/components/home/PlatformsSection';
+import { CompanySection } from '@/components/home/CompanySection';
+import { EngineeringSection } from '@/components/home/EngineeringSection';
+import { IdentitySection } from '@/components/home/IdentitySection';
+import { ContactSection } from '@/components/home/ContactSection';
 
 import { SectionDivider } from '@/components/ui/SectionDivider';
 
@@ -108,6 +113,24 @@ export default function HomePage() {
       <SectionDivider />
       
       <AdaptiveSystemSection />
+
+      <SectionDivider />
+      
+      <EngineeringSection />
+
+      <SectionDivider />
+
+      <PlatformsSection />
+
+      <SectionDivider />
+
+      <CompanySection />
+
+      <SectionDivider />
+
+      <IdentitySection />
+
+      <ContactSection />
 
     </main>
   );

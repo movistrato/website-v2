@@ -4,29 +4,22 @@ import { motion } from 'framer-motion';
 
 export function SectionDivider() {
   return (
-    <div className="w-full flex justify-center items-center py-6 lg:py-10 overflow-hidden relative z-20">
+    <div className="w-full flex items-center py-10 lg:py-16 relative z-20 px-6 lg:px-12">
+      <div className="w-full h-px bg-foreground/20 dark:bg-foreground/15" />
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.8 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="flex items-center gap-4 text-xs lg:text-sm font-mono tracking-[0.3em] font-light"
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mx-6 flex items-center gap-3 shrink-0"
       >
-        <span className="text-border/60">-------------</span>
-        <span className="relative">
-          {/* Gradient text that animates */}
-          <span 
-            className="absolute inset-0 bg-gradient-to-r from-brand-gold via-amber-200 to-brand-gold bg-[length:200%_auto] bg-clip-text text-transparent opacity-90"
-            style={{
-              animation: 'shimmer 3s linear infinite'
-            }}
-          >
-            //
-          </span>
-          <span className="opacity-0">//</span>
+        <span className="w-1.5 h-1.5 bg-brand-gold/80 rotate-45" />
+        <span className="font-mono text-sm lg:text-base tracking-widest text-brand-gold font-bold select-none">
+          {"//"}
         </span>
-        <span className="text-border/60">-------------</span>
+        <span className="w-1.5 h-1.5 bg-brand-gold/80 rotate-45" />
       </motion.div>
+      <div className="w-full h-px bg-foreground/20 dark:bg-foreground/15" />
     </div>
   );
 }

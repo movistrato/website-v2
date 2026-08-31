@@ -24,7 +24,7 @@
     "dev_badge": "[ DEV ]"
   },
   "Manifesto": {
-    "title": "O software não devia obrigar todas as pessoas a seguir o mesmo caminho.",
+    "title": "O software não devia obrigar todas as pessoas a seguir <accent>o mesmo caminho.</accent>",
     "body": "Acreditamos num software que utiliza contexto, interação e engenharia intencional para criar experiências capazes de se tornarem mais relevantes ao longo do tempo.",
     "label": "TESE / 001",
     "details": {
@@ -52,11 +52,32 @@
       "f2_body": "Construído do zero para Windows e Android, evitando web-wrappers lentos. O FARO utiliza as APIs nativas do sistema para garantir os famosos 120 fotogramas por segundo.",
       "f3_title": "Design Adaptativo",
       "f3_body": "Uma interface que cresce contigo. À medida que o teu nível aumenta, os elementos de suporte visual desaparecem, focando-te no desafio cru."
+    },
+    "specs": {
+      "status_label": "STATUS",
+      "status_value": "[ EM DESENVOLVIMENTO ]",
+      "version_label": "VERSÃO",
+      "version_value": "01.00.00-BETA",
+      "location_label": "LOCALIZAÇÃO",
+      "location_value": "UE / PORTUGAL"
     }
+  },
+  "Engineering": {
+    "label": "ENGENHARIA / CORE",
+    "title": "<accent>Arquitetura</accent> antes da complexidade.",
+    "description": "A grande engenharia significa fazer a complexidade desaparecer. Construímos sobre alicerces sólidos e deliberados—priorizando a fiabilidade, a performance e software preparado para evoluir.",
+    "description2": "Cada linha de código serve um propósito. Rejeitamos abstrações desnecessárias, favorecendo contratos explícitos e fluxos de dados previsíveis em toda a stack.",
+    "description3": "Construído para durar, não apenas para lançar. A nossa arquitetura foi desenhada para absorver complexidade futura sem degradar a performance ou a experiência do programador.",
+    "pillar1_title": "Precisão Estrutural",
+    "pillar1_desc": "Fronteiras de componentes rigorosas e contratos de dados inequívocos. Evitamos camadas abstratas que obscurecem a arquitetura subjacente.",
+    "pillar2_title": "Estado Zero-Trust",
+    "pillar2_desc": "Fluxo de dados previsível sem efeitos secundários não geridos. Cada mudança de estado é explícita, rastreável e totalmente controlada.",
+    "pillar3_title": "Eficiência Bare-Metal",
+    "pillar3_desc": "Máximo rendimento, mínimo overhead. Escrevemos código que respeita o hardware onde é executado, eliminando custos de runtime desnecessários."
   },
   "AdaptiveSystem": {
     "label": "SISTEMA / EM DESENVOLVIMENTO",
-    "title": "O software deve moldar-se a ti.",
+    "title": "<software>O software</software> deve moldar-se a ti.",
     "description": "Um sistema adaptativo aprende com cada interação, utilizando o contexto para ajustar a complexidade e a progressão sem intervenção manual.",
     "node_user": "UTILIZADOR",
     "node_interaction": "INTERAÇÃO",
@@ -65,8 +86,93 @@
     "node_adaptation": "ADAPTAÇÃO",
     "node_experience": "PRÓXIMA EXPERIÊNCIA"
   },
+  "Platforms": {
+    "label": "PLATAFORMAS / CONTINUIDADE",
+    "title": "A experiência <highlight>acompanha</highlight> a pessoa.",
+    "description": "Acreditamos que o software não deve ficar confinado a um <highlight>único dispositivo</highlight>. O FARO foi desenhado para existir perfeitamente nas plataformas que utilizas, <underline>mantendo o contexto</underline> e progredindo contigo.",
+    "available_label": "DISPONÍVEL",
+    "planned_label": "PLANEADO / PRÓXIMO",
+    "web": "Web",
+    "android": "Android",
+    "windows": "Windows",
+    "ios": "iOS",
+    "macos": "macOS",
+    "linux": "Linux",
+    "card1_label": "SYNC",
+    "card1_value": "< 10ms",
+    "card2_label": "ESTADO",
+    "card2_value": "Zero-Trust",
+    "feature1_title": "Arquitetura Nativa",
+    "feature1_desc": "Sem abstrações web. Construído especificamente para cada sistema operativo garantindo performance imaculada.",
+    "feature2_title": "Sincronização Imediata",
+    "feature2_desc": "O teu contexto move-se contigo. Retoma exatamente de onde paraste em qualquer dispositivo com latência inferior a 10ms.",
+    "feature3_title": "Motor Offline",
+    "feature3_desc": "O FARO corre localmente. Acesso total ao motor contextual mesmo quando completamente desligado da rede."
+  },
+  "Company": {
+    "label": "07 / A EMPRESA",
+    "statement_prefix": "O FARO É O ",
+    "statement_highlight": "PRIMEIRO CAPÍTULO.",
+    "description": "A Movistrato é uma empresa de software criada para desenvolver produtos digitais com rigor técnico e longevidade. O FARO é o nosso primeiro produto — e o ponto de partida para tudo o que queremos construir.",
+    "fact_founded": "2026",
+    "fact_location": "PORTUGAL",
+    "fact_focus": "PRODUTOS DE SOFTWARE",
+    "cta": "CONHECER A MOVISTRATO"
+  },
   "Index": {
     "title": "Movistrato"
+  },
+  "Identity": {
+    "name": {
+      "intro": "O nome não começou com uma definição. A empresa deu-lhe uma.",
+      "movi": {
+        "label": "01 / MOVIMENTO",
+        "text": "A vontade de avançar, adaptar e evoluir."
+      },
+      "strato": {
+        "label": "02 / ESTRUTURA",
+        "text": "As camadas e os fundamentos sobre os quais construímos software."
+      },
+      "conclusion": "MOVIMENTO SUSTENTADO POR ESTRUTURA.",
+      "transition": "A MESMA IDEIA CONTINUA NA MARCA."
+    },
+    "title": "UM SÍMBOLO COM <marker>RAÍZES PORTUGUESAS</marker>",
+    "label": "IDENTIDADE / A MARCA",
+    "chapters": {
+      "0": {
+        "title": "00. Origens",
+        "text": "A identidade da Movistrato nasce do mesmo lugar que a empresa: Portugal. O nosso emblema é uma interpretação contemporânea da tradição heráldica portuguesa. O escudo e as cinco quinas estabelecem uma ligação subtil às nossas origens, não como uma reprodução dos símbolos nacionais, mas como uma homenagem reinterpretada através da linguagem que nos define: engenharia e tecnologia."
+      },
+      "1": {
+        "title": "01. As Quinas",
+        "text": "As cinco quinas representam cinco princípios sobre os quais queremos construir a Movistrato: <blue>Engenharia</blue>, <gold>Ambição</gold>, <red>Sacrifício</red>, <stone>Integridade</stone> e <emerald>Inovação</emerald>. Valores diferentes, unidos dentro do mesmo sistema."
+      },
+      "2": {
+        "title": "02. Circuitos",
+        "text": "Entre elas percorrem linhas inspiradas em circuitos eletrónicos. Representam as ligações invisíveis por detrás da tecnologia — arquitetura, código, dados e sistemas que trabalham em conjunto para transformar uma ideia num produto. A sua simetria traduz o rigor e a precisão que procuramos aplicar à engenharia de software."
+      },
+      "3": {
+        "title": "03. O Centro",
+        "text": "No centro, a própria geometria do emblema esconde um “M”. Não foi colocado como uma letra convencional: faz parte da estrutura. Uma referência à Movistrato que se revela apenas a quem observa com atenção."
+      },
+      "4": {
+        "title": "04. A Coroa",
+        "text": "Sobre o escudo ergue-se uma coroa geométrica. Para nós, não representa estatuto nem riqueza. Representa ambição — a vontade de elevar constantemente aquilo que construímos e de competir para além das fronteiras onde começámos."
+      },
+      "5": {
+        "title": "05. O Sistema",
+        "text": "O amarelo surge apenas em pequenos pontos do símbolo. É deliberadamente contido: representa energia, conhecimento, criação e os momentos em que uma ideia ganha vida. O grafite transmite estrutura e precisão; o espaço branco preserva clareza e simplicidade. O resultado procura refletir a própria filosofia da Movistrato: complexidade por dentro, simplicidade por fora."
+      },
+      "6": {
+        "title": "06. O Manifesto",
+        "text": "Um símbolo português sem precisar de mostrar uma bandeira.<br/><br/>Um símbolo tecnológico sem precisar de escrever “software”.<br/><br/>Um símbolo da Movistrato sem precisar de escrever o seu nome.<br/><br/>Nascemos em Portugal. Construímos para o mundo."
+      }
+    }
+  },
+  "Contact": {
+    "headline": "O PRÓXIMO CAPÍTULO COMEÇA COM UMA CONVERSA.",
+    "cta": "CONTACTAR A MOVISTRATO",
+    "label": "CONTACTO / INÍCIO"
   },
   "Footer": {
     "product": "PRODUTO",
