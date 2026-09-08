@@ -292,7 +292,7 @@ export function IdentitySection() {
                   <h3 className="font-serif italic text-2xl lg:text-3xl text-brand-gold">
                     {t(`chapters.${currentChapter.id}.title`)}
                   </h3>
-                  <div className="font-sans text-lg lg:text-xl leading-relaxed text-foreground">
+                  <div className="font-sans text-lg lg:text-xl leading-relaxed text-foreground whitespace-pre-line">
                     {t.rich(`chapters.${currentChapter.id}.text`, {
                       blue: (chunks) => <span className="text-blue-500 font-medium">{chunks}</span>,
                       gold: (chunks) => <span className="text-brand-gold font-medium">{chunks}</span>,

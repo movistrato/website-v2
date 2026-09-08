@@ -7,6 +7,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { inter, newsreader, jetbrainsMono } from '@/lib/fonts';
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
+import { CookieConsent } from '@/components/ui/CookieConsent';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -39,7 +40,8 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   
-  if (!routing.locales.includes(locale as typeof routing.locales[number])) {    notFound();
+  if (!routing.locales.includes(locale as typeof routing.locales[number])) {
+    notFound();
   }
 
   const messages = await getMessages();
@@ -54,6 +56,7 @@ export default async function LocaleLayout({
               {children}
             </main>
             <Footer />
+            <CookieConsent />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

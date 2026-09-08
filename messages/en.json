@@ -165,7 +165,7 @@
       },
       "6": {
         "title": "06. The Manifesto",
-        "text": "A Portuguese symbol without needing to show a flag.<br/><br/>A technological symbol without needing to write “software”.<br/><br/>A Movistrato symbol without needing to write its name.<br/><br/>We were born in Portugal. We build for the world."
+        "text": "A Portuguese symbol without needing to show a flag.\n\nA technological symbol without needing to write \"software\".\n\nA Movistrato symbol without needing to write its name.\n\nWe were born in Portugal. We build for the world."
       }
     }
   },
@@ -184,6 +184,16 @@
     "contact": "Contact",
     "privacy": "Privacy",
     "terms": "Terms",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "complaints_book": "Complaints Book"
+  },
+  "CookieConsent": {
+    "label": "00 / PRIVACY & COMPLIANCE",
+    "title": "Data Processing and Consent",
+    "description": "We use essential cookies and telemetry technologies to ensure platform integrity and refine user experience in full compliance with GDPR and LGPD.",
+    "accept_all": "ACCEPT ALL",
+    "essential_only": "ESSENTIAL ONLY",
+    "learn_more": "Learn more",
+    "privacy_link": "Privacy Policy"
   }
 }

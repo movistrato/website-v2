@@ -59,6 +59,15 @@ export function Footer() {
               <Link href="/privacy" className="font-mono text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors w-fit">{t('privacy')}</Link>
               <Link href="/terms" className="font-mono text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors w-fit">{t('terms')}</Link>
               <Link href="/cookies" className="font-mono text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors w-fit">{t('cookies')}</Link>
+              <a 
+                href="https://www.livroreclamacoes.pt/inicio" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="font-mono text-xs tracking-widest uppercase text-muted hover:text-foreground transition-colors w-fit flex items-center gap-1 group"
+              >
+                <span>{t('complaints_book')}</span>
+                <span className="text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              </a>
             </div>
           </div>
           

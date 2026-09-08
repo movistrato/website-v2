@@ -165,7 +165,7 @@
       },
       "6": {
         "title": "06. O Manifesto",
-        "text": "Um símbolo português sem precisar de mostrar uma bandeira.<br/><br/>Um símbolo tecnológico sem precisar de escrever “software”.<br/><br/>Um símbolo da Movistrato sem precisar de escrever o seu nome.<br/><br/>Nascemos em Portugal. Construímos para o mundo."
+        "text": "Um símbolo português sem precisar de mostrar uma bandeira.\n\nUm símbolo tecnológico sem precisar de escrever \"software\".\n\nUm símbolo da Movistrato sem precisar de escrever o seu nome.\n\nNascemos em Portugal. Construímos para o mundo."
       }
     }
   },
@@ -184,6 +184,16 @@
     "contact": "Contacto",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "complaints_book": "Livro de Reclamações"
+  },
+  "CookieConsent": {
+    "label": "00 / PRIVACIDADE & CONFORMIDADE",
+    "title": "Consentimento e Tratamento de Dados",
+    "description": "Utilizamos cookies essenciais e tecnologias analíticas para assegurar a estabilidade do sistema e otimizar a experiência, de acordo com o RGPD e LGPD.",
+    "accept_all": "ACEITAR TODOS",
+    "essential_only": "APENAS ESSENCIAIS",
+    "learn_more": "Saber mais",
+    "privacy_link": "Política de Privacidade"
   }
 }
