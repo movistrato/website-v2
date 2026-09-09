@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from '@/i18n/routing';
@@ -14,21 +14,26 @@ interface ConsentRecord {
   timestamp: string;
 }
 
+const subscribe = (callback: () => void) => {
+  window.addEventListener('storage', callback);
+  return () => window.removeEventListener('storage', callback);
+};
+
+const getSnapshot = () => {
+  try {
+    return !localStorage.getItem(CONSENT_STORAGE_KEY);
+  } catch {
+    return true;
+  }
+};
+
+const getServerSnapshot = () => false;
+
 export function CookieConsent() {
   const t = useTranslations('CookieConsent');
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(CONSENT_STORAGE_KEY);
-      if (!stored) {
-        setIsVisible(true);
-      }
-    } catch {
-      // In case localStorage is blocked by browser privacy settings
-      setIsVisible(true);
-    }
-  }, []);
+  const isConsentNeeded = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const [dismissed, setDismissed] = useState(false);
+  const isVisible = isConsentNeeded && !dismissed;
 
   const saveConsent = (choice: ConsentChoice) => {
     try {
@@ -40,7 +45,7 @@ export function CookieConsent() {
     } catch {
       // Fail gracefully if storage quota exceeded or restricted
     }
-    setIsVisible(false);
+    setDismissed(true);
   };
 
   return (

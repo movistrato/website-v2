@@ -4,6 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { LocaleSwitcher } from "./LocaleSwitcher";
 import { Container } from "../layout/Container";
 import { MobileNav } from "./MobileNav";
+import { ContactNavLink } from "./ContactNavLink";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -52,13 +53,7 @@ export function Header() {
               <LocaleSwitcher />
               <ThemeToggle />
             </div>
-            <Link 
-              href="/contact" 
-              className="group flex items-center gap-2 text-xs font-mono tracking-widest text-foreground transition-colors hover:text-brand-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-gold uppercase"
-            >
-              <span>{t("contact")}</span>
-              <span className="inline-block transition-transform group-hover:-translate-y-[2px] group-hover:translate-x-[2px] text-brand-gold" aria-hidden="true">↗</span>
-            </Link>
+            <ContactNavLink label={t("contact")} />
           </div>
 
           {/* RIGHT: Controls (Mobile) */}

@@ -1,16 +1,13 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 export function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const { resolvedTheme, setTheme } = useTheme();
-
-  // Ensure component is mounted to avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return <div className="w-5 h-5" aria-hidden="true" />;

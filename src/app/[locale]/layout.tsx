@@ -8,6 +8,7 @@ import { inter, newsreader, jetbrainsMono } from '@/lib/fonts';
 import { Header } from '@/components/navigation/Header';
 import { Footer } from '@/components/navigation/Footer';
 import { CookieConsent } from '@/components/ui/CookieConsent';
+import { PageTransitionLoader } from '@/components/navigation/PageTransitionLoader';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -48,9 +49,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            <PageTransitionLoader />
             <Header />
             <main className="min-h-screen">
               {children}

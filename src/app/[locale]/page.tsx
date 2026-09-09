@@ -14,6 +14,7 @@ import { IdentitySection } from '@/components/home/IdentitySection';
 import { ContactSection } from '@/components/home/ContactSection';
 
 import { SectionDivider } from '@/components/ui/SectionDivider';
+import { TickerMarquee } from '@/components/motion/TickerMarquee';
 
 export default function HomePage() {
   const t = useTranslations('Hero');
@@ -103,6 +104,11 @@ export default function HomePage() {
         </section>
         </ScrollExitWrapper>
       </HeroReveal>
+ 
+      {/* Architectural Ticker Divider between Hero and Manifesto */}
+      <div className="w-full my-16 sm:my-20 lg:my-28 relative z-20 overflow-hidden">
+        <TickerMarquee />
+      </div>
 
       <ManifestoSection />
       

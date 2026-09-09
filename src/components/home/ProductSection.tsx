@@ -6,6 +6,11 @@ import Image from 'next/image';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Container';
 import { AndroidLogo, AppleLogo, WindowsLogo, Globe } from '@phosphor-icons/react';
+import {
+  ContextualEngineGraphic,
+  NativeRenderingGraphic,
+  AdaptiveDesignGraphic,
+} from '@/components/home/product/ProductFeatureGraphics';
 
 // --- ANIMATION VARIANTS ---
 
@@ -216,7 +221,7 @@ export function ProductSection() {
                       fill
                       className="object-cover object-left-top"
                       sizes="(max-width: 768px) 100vw, 85vw"
-                      priority
+                      quality={90}
                     />
                   </div>
                   
@@ -262,6 +267,7 @@ export function ProductSection() {
                           fill
                           className="object-cover object-left lg:object-center"
                           sizes="(max-width: 768px) 30vw, 15vw"
+                          quality={90}
                         />
                       </div>
 
@@ -302,45 +308,78 @@ export function ProductSection() {
           viewport={{ once: false, amount: 0.2 }}
           className="w-full mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-px bg-border/40 border border-border/40 relative z-10"
         >
-          {/* Feature 1 */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col gap-8 p-8 lg:p-12 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+          {/* Feature 1: Motor Contextual */}
+          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            <div className="w-12 h-12 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-              </svg>
+            
+            {/* Header Row with Icon & Telemetry Badge */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                01 // ALGORITMO
+              </span>
             </div>
-            <div className="flex flex-col gap-4 relative z-10">
+
+            {/* Custom Schematic Drawing: Contextual Engine */}
+            <ContextualEngineGraphic />
+
+            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
               <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f1_title')}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t('features.f1_body')}</p>
+              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f1_body')}</p>
             </div>
           </motion.div>
 
-          {/* Feature 2 */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col gap-8 p-8 lg:p-12 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+          {/* Feature 2: Renderização Nativa */}
+          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            <div className="w-12 h-12 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+            
+            {/* Header Row with Icon & Telemetry Badge */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                02 // HARDWARE BARE-METAL
+              </span>
             </div>
-            <div className="flex flex-col gap-4 relative z-10">
+
+            {/* Custom Schematic Drawing: Native Rendering */}
+            <NativeRenderingGraphic />
+
+            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
               <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f2_title')}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t('features.f2_body')}</p>
+              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f2_body')}</p>
             </div>
           </motion.div>
 
-          {/* Feature 3 */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col gap-8 p-8 lg:p-12 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+          {/* Feature 3: Design Adaptativo */}
+          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            <div className="w-12 h-12 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-              </svg>
+            
+            {/* Header Row with Icon & Telemetry Badge */}
+            <div className="flex items-center justify-between mb-2">
+              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+              </div>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                03 // UI PROGRESSIVA
+              </span>
             </div>
-            <div className="flex flex-col gap-4 relative z-10">
+
+            {/* Custom Schematic Drawing: Adaptive Design */}
+            <AdaptiveDesignGraphic />
+
+            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
               <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f3_title')}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t('features.f3_body')}</p>
+              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f3_body')}</p>
             </div>
           </motion.div>
         </motion.div>

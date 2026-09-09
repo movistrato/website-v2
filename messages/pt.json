@@ -172,7 +172,102 @@
   "Contact": {
     "headline": "O PRÓXIMO CAPÍTULO COMEÇA COM UMA CONVERSA.",
     "cta": "CONTACTAR A MOVISTRATO",
-    "label": "CONTACTO / INÍCIO"
+    "label": "CONTACTO / INÍCIO",
+    "page_badge": "04 // CANAL DIRETO",
+    "page_title": "Uma conversa pode ser o início.",
+    "page_subtitle": "Questões sobre a Movistrato, o FARO, tecnologia ou colaborações? Falamos diretamente com quem constrói e com quem utiliza.",
+    "metadata_title": "Contacto — Movistrato",
+    "metadata_desc": "Entra em contacto direto com a equipa da Movistrato sobre produtos, tecnologia e colaborações.",
+    "topics": {
+      "label": "MOTIVO DO CONTACTO",
+      "faro": "Produto / FARO",
+      "tech": "Tecnologia",
+      "partners": "Parcerias",
+      "general": "Geral"
+    },
+    "form": {
+      "name_label": "01 / NOME",
+      "name_placeholder": "// nome ou identificação",
+      "email_label": "02 / EMAIL",
+      "email_placeholder": "// email@dominio.com",
+      "org_label": "03 / ORGANIZAÇÃO",
+      "org_optional": "(Opcional)",
+      "org_placeholder": "// empresa, estúdio ou projeto",
+      "topic_label": "04 / TÓPICO",
+      "message_label": "05 / MENSAGEM",
+      "message_placeholder": "// partilha a tua proposta, questão técnica ou perspetiva...",
+      "privacy_notice": "Os teus dados são tratados exclusivamente para responder a este contacto.",
+      "privacy_link": "Privacidade",
+      "submit_cta": "ENVIAR MENSAGEM →",
+      "submitting_cta": "A PROCESSAR..."
+    },
+    "direct": {
+      "section_label": "02 // CANAIS DIRETOS",
+      "title": "Canais Diretos",
+      "subtitle": "Canal direto com a equipa de desenvolvimento e fundação.",
+      "email_label": "CANAL PRINCIPAL // INQUIRIES",
+      "email_address": "contact@movistrato.com",
+      "copy_email": "COPIAR",
+      "copied": "COPIADO ✓",
+      "response_label": "CADÊNCIA DE RESPOSTA",
+      "response_value": "Normalmente em 24–48h úteis",
+      "response_note": "Acompanhamento rigoroso de cada contacto.",
+      "links_label": "REPOSITÓRIO & REDE",
+      "emblem_label": "MOVISTRATO // SÍMBOLO OFICIAL",
+      "emblem_sub": "Rigor técnico & arquitetura de produto"
+    },
+    "feedback": {
+      "v1_badge": "SISTEMA V1 // MODO EXPERIMENTAL",
+      "v1_notice": "Validação de interface concluída. O envio ativo para o servidor de produção será ativado na fase V3.",
+      "err_name": "Indica o teu nome.",
+      "err_email": "Insere um endereço de email válido.",
+      "err_message": "A mensagem deve conter pelo menos 10 caracteres."
+    },
+    "standards": {
+      "badge": "03 // PRINCÍPIOS DE DIÁLOGO",
+      "title": "Compromisso de Comunicação",
+      "subtitle": "Tratamos cada transmissão com o mesmo rigor com que desenvolvemos software.",
+      "card1_num": "01",
+      "card1_tag": "ENGENHARIA DIRETA",
+      "card1_title": "Sem Filtros Comerciais",
+      "card1_desc": "O teu contacto chega diretamente à equipa fundadora e de engenharia da Movistrato. Não temos equipas de vendas agressivas nem intermediários.",
+      "card2_num": "02",
+      "card2_tag": "PRIVACIDADE",
+      "card2_title": "Confidencialidade Estrita",
+      "card2_desc": "Ideias, perspetivas e propostas partilhadas connosco são tratadas com sigilo total. Não alimentamos bases de marketing nem cedemos dados a terceiros.",
+      "card3_num": "03",
+      "card3_tag": "MODELO DE PRODUTO",
+      "card3_title": "Foco Exclusivo em Produto",
+      "card3_desc": "A Movistrato é exclusivamente uma empresa de produtos de software. Não aceitamos trabalho por encomenda, serviços de agência ou consultoria pontual."
+    },
+    "faq": {
+      "badge": "04 // CLARIFICAÇÕES FREQUENTES",
+      "title": "Perguntas Frequentes",
+      "subtitle": "Respostas objetivas sobre a nossa operação, o FARO e o modelo de contacto.",
+      "hint": "Seleciona uma questão para expandir a clarificação técnica.",
+      "items": [
+        {
+          "tag": "ACESSO // FARO",
+          "q": "Como posso participar nos testes fechados do FARO?",
+          "a": "Seleciona o tópico 'Produto / FARO' no formulário acima. As vagas para acesso antecipado são disponibilizadas por ordem de validação a utilizadores que queiram testar a experiência adaptativa."
+        },
+        {
+          "tag": "MODELO // ESTRUTURA",
+          "q": "A Movistrato aceita encomendas de software ou consultoria?",
+          "a": "Não. Não prestamos serviços de desenvolvimento para clientes nem atuamos como agência. Todo o nosso tempo e capital estão dedicados ao desenvolvimento dos nossos produtos proprietários."
+        },
+        {
+          "tag": "COLABORAÇÃO // REDE",
+          "q": "Estão abertos a parcerias técnicas ou institucionais?",
+          "a": "Sim. Avaliamos parcerias com plataformas educativas, investigadores de linguística computacional e infraestruturas técnicas que partilhem dos nossos padrões de rigor e privacidade."
+        },
+        {
+          "tag": "SEGURANÇA // AUDITORIA",
+          "q": "Como posso reportar uma vulnerabilidade ou questão de segurança?",
+          "a": "Apoiamos ativamente o escrutínio independente. Podes selecionar o tópico 'Tecnologia' ou enviar a tua análise diretamente para o email contact@movistrato.com."
+        }
+      ]
+    }
   },
   "Footer": {
     "product": "PRODUTO",
@@ -185,7 +280,9 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "cookies": "Cookies",
-    "complaints_book": "Livro de Reclamações"
+    "complaints_book": "Livro de Reclamações",
+    "tagline": "Produtos de software desenvolvidos com rigor técnico, arquitetura nativa e longevidade.",
+    "all_rights_reserved": "Todos os direitos reservados."
   },
   "CookieConsent": {
     "label": "00 / PRIVACIDADE & CONFORMIDADE",
@@ -195,5 +292,29 @@
     "essential_only": "APENAS ESSENCIAIS",
     "learn_more": "Saber mais",
     "privacy_link": "Política de Privacidade"
+  },
+  "PageLoader": {
+    "tagline": "MOVIMENTO SUSTENTADO POR ESTRUTURA",
+    "initializing": "A INICIALIZAR MÓDULO",
+    "ready": "LINK ESTABELECIDO",
+    "coordinates": "NÓ 38.7223° N, 9.1393° W // LISBOA · UE"
+  },
+  "NotFound": {
+    "badge": "ERRO 404 // COORDENADA INEXISTENTE",
+    "title": "O nó requisitado não existe na estrutura.",
+    "description": "A rota que tentaste aceder pode ter sido descontinuada, migrada ou o endereço inserido não coincide com nenhum contrato de dados ativo na plataforma.",
+    "return_home": "Voltar ao Início",
+    "contact_support": "Contactar Suporte",
+    "status": "STATUS: 404_NOT_FOUND",
+    "integrity": "INTEGRIDADE GLOBAL: 100% // NÓ ISOLADO"
+  },
+  "ServerError": {
+    "badge": "ERRO 500 // EXCEÇÃO DE RUNTIME",
+    "title": "Falha temporária de sincronização de estado.",
+    "description": "O motor encontrou uma exceção não tratada na execução do nó. A integridade estrutural foi preservada e o incidente foi registado.",
+    "reset": "Reiniciar Nó (Reset)",
+    "return_home": "Voltar ao Início",
+    "status": "STATUS: 500_SERVER_ERROR",
+    "integrity": "INTEGRIDADE GLOBAL: 100% // NÓ PROTEGIDO"
   }
 }

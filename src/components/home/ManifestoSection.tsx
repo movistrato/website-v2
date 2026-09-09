@@ -3,7 +3,11 @@
 import { useTranslations } from 'next-intl';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Container';
-import { TickerMarquee } from '@/components/motion/TickerMarquee';
+import {
+  AdaptiveCurveGraphic,
+  UbiquitousSyncGraphic,
+  NativePerformanceGraphic,
+} from '@/components/home/manifesto/ManifestoCardGraphics';
 
 // --- ANIMATION VARIANTS ---
 
@@ -60,14 +64,9 @@ export function ManifestoSection() {
   return (
     <section className="relative w-full min-h-screen py-12 lg:py-20 bg-background overflow-hidden flex flex-col justify-center">
       
-      {/* Absolute top ticker */}
-      <div className="absolute top-0 left-0 w-full">
-        <TickerMarquee />
-      </div>
-      
       {/* HUD Corners */}
-      <div className="absolute top-16 left-6 w-4 h-4 border-l border-t border-border/40" aria-hidden="true" />
-      <div className="absolute top-16 right-6 w-4 h-4 border-r border-t border-border/40" aria-hidden="true" />
+      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t border-border/40" aria-hidden="true" />
+      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t border-border/40" aria-hidden="true" />
       <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b border-border/40" aria-hidden="true" />
       <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b border-border/40" aria-hidden="true" />
       
@@ -140,42 +139,57 @@ export function ManifestoSection() {
           {/* BOTTOM: Premium UI Cards (The 3 Core Values) - Full Width */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 border border-border/40 relative z-10">
             
-            {/* Card 1 */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            {/* Card 1: Adaptação Contínua */}
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-              <div className="flex justify-between items-start mb-10 lg:mb-14">
+              
+              <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">01</span>
                  <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
               </div>
-              <div className="flex flex-col gap-3 relative z-10">
+
+              {/* Architectural Schematic Drawing: Adaptive Curve */}
+              <AdaptiveCurveGraphic />
+
+              <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
                 <span className="font-sans text-xs font-semibold tracking-widest uppercase text-foreground group-hover:text-brand-gold transition-colors">{t('details.item1_title')}</span>
-                <span className="text-sm text-muted-foreground leading-relaxed">{t('details.item1_body')}</span>
+                <span className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('details.item1_body')}</span>
               </div>
             </motion.div>
 
-            {/* Card 2 */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            {/* Card 2: Continuidade Ubíqua */}
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-              <div className="flex justify-between items-start mb-10 lg:mb-14">
+              
+              <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">02</span>
                  <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
               </div>
-              <div className="flex flex-col gap-3 relative z-10">
+
+              {/* Architectural Schematic Drawing: Ubiquitous Sync */}
+              <UbiquitousSyncGraphic />
+
+              <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
                 <span className="font-sans text-xs font-semibold tracking-widest uppercase text-foreground group-hover:text-brand-gold transition-colors">{t('details.item2_title')}</span>
-                <span className="text-sm text-muted-foreground leading-relaxed">{t('details.item2_body')}</span>
+                <span className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('details.item2_body')}</span>
               </div>
             </motion.div>
 
-            {/* Card 3 */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            {/* Card 3: Performance Nativa */}
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-              <div className="flex justify-between items-start mb-10 lg:mb-14">
+              
+              <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">03</span>
                  <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
               </div>
-              <div className="flex flex-col gap-3 relative z-10">
+
+              {/* Architectural Schematic Drawing: Native Performance */}
+              <NativePerformanceGraphic />
+
+              <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
                 <span className="font-sans text-xs font-semibold tracking-widest uppercase text-foreground group-hover:text-brand-gold transition-colors">{t('details.item3_title')}</span>
-                <span className="text-sm text-muted-foreground leading-relaxed">{t('details.item3_body')}</span>
+                <span className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('details.item3_body')}</span>
               </div>
             </motion.div>
 

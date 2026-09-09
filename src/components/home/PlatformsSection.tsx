@@ -4,6 +4,11 @@ import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Container';
+import {
+  NativeArchitectureGraphic,
+  ImmediateSyncGraphic,
+  OfflineEngineGraphic,
+} from '@/components/home/platforms/PlatformsFeatureGraphics';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -247,7 +252,7 @@ export function PlatformsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full mt-24 lg:mt-32 pt-16 border-t border-border/50 grid grid-cols-1 md:grid-cols-3 gap-12 relative"
+          className="w-full mt-24 lg:mt-32 pt-16 border-t border-border/50 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 relative"
         >
           {/* Animated subtle top line for "vida" */}
           <motion.div 
@@ -258,25 +263,65 @@ export function PlatformsSection() {
              transition={{ duration: 1.5, ease: [0.21, 0.47, 0.32, 0.98] }}
           />
 
-          {[1, 2, 3].map((num) => (
-            <motion.div key={num} variants={itemVariants} className="flex flex-col gap-4 relative group">
-              {/* Abstract geometric pulsing indicator */}
-              <div className="flex items-center gap-3">
-                <span className="flex items-center justify-center w-6 h-6 border border-border rounded-full bg-surface/50 group-hover:border-brand-gold/50 transition-colors">
-                   <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
-                </span>
-                <span className="font-mono text-[10px] tracking-widest text-muted-foreground group-hover:text-foreground transition-colors">
-                  00{num}
-                </span>
-              </div>
-              
-              {/* Feature Text */}
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <h3 className="text-base font-serif italic tracking-wide text-foreground mt-2">{t(`feature${num}_title` as any)}</h3>
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              <p className="text-sm text-muted-foreground leading-relaxed border-l border-border/50 pl-4">{t(`feature${num}_desc` as any)}</p>
-            </motion.div>
-          ))}
+          {/* Pillar 001: Arquitetura Nativa */}
+          <motion.div variants={itemVariants} className="group flex flex-col justify-between p-6 sm:p-7 bg-surface/20 border border-border/40 hover:border-brand-gold/40 hover:bg-surface/30 transition-all duration-300 relative">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-[10px] tracking-widest text-muted-foreground group-hover:text-foreground transition-colors flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
+                001
+              </span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                BARE-METAL
+              </span>
+            </div>
+
+            <NativeArchitectureGraphic />
+
+            <div className="flex flex-col gap-2 pt-4 border-t border-border/20">
+              <h3 className="text-base font-serif italic tracking-wide text-foreground group-hover:text-brand-gold transition-colors">{t('feature1_title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('feature1_desc')}</p>
+            </div>
+          </motion.div>
+
+          {/* Pillar 002: Sincronização Imediata */}
+          <motion.div variants={itemVariants} className="group flex flex-col justify-between p-6 sm:p-7 bg-surface/20 border border-border/40 hover:border-brand-gold/40 hover:bg-surface/30 transition-all duration-300 relative">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-[10px] tracking-widest text-muted-foreground group-hover:text-foreground transition-colors flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
+                002
+              </span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                SUB-10MS
+              </span>
+            </div>
+
+            <ImmediateSyncGraphic />
+
+            <div className="flex flex-col gap-2 pt-4 border-t border-border/20">
+              <h3 className="text-base font-serif italic tracking-wide text-foreground group-hover:text-brand-gold transition-colors">{t('feature2_title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('feature2_desc')}</p>
+            </div>
+          </motion.div>
+
+          {/* Pillar 003: Motor Offline */}
+          <motion.div variants={itemVariants} className="group flex flex-col justify-between p-6 sm:p-7 bg-surface/20 border border-border/40 hover:border-brand-gold/40 hover:bg-surface/30 transition-all duration-300 relative">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-mono text-[10px] tracking-widest text-muted-foreground group-hover:text-foreground transition-colors flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
+                003
+              </span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
+                AIR-GAPPED
+              </span>
+            </div>
+
+            <OfflineEngineGraphic />
+
+            <div className="flex flex-col gap-2 pt-4 border-t border-border/20">
+              <h3 className="text-base font-serif italic tracking-wide text-foreground group-hover:text-brand-gold transition-colors">{t('feature3_title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('feature3_desc')}</p>
+            </div>
+          </motion.div>
         </motion.div>
 
       </Container>

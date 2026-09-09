@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Link } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { ThemeToggle } from "./ThemeToggle";
 import { LocaleSwitcher } from "./LocaleSwitcher";
@@ -9,6 +9,8 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 export function MobileNav() {
   const t = useTranslations("Header");
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isContact = pathname === "/contact";
 
   // Prevent scrolling when the menu is open
   useEffect(() => {
@@ -101,10 +103,11 @@ export function MobileNav() {
             <Link 
               href="/contact" 
               onClick={() => setIsOpen(false)}
+              aria-current={isContact ? "page" : undefined}
               className="group flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold w-fit mt-6"
             >
-              <span className="font-mono text-[10px] text-muted-foreground tracking-widest uppercase mb-2 group-hover:text-foreground transition-colors">04</span>
-              <span className="font-display text-[32px] leading-[0.85] tracking-[-0.02em] uppercase text-foreground group-hover:text-brand-gold transition-colors flex items-center gap-4">
+              <span className={`font-mono text-[10px] tracking-widest uppercase mb-2 transition-colors ${isContact ? "text-brand-gold font-medium" : "text-muted-foreground group-hover:text-foreground"}`}>04</span>
+              <span className={`font-display text-[32px] leading-[0.85] tracking-[-0.02em] uppercase transition-colors flex items-center gap-4 ${isContact ? "text-brand-gold" : "text-foreground group-hover:text-brand-gold"}`}>
                 {t("contact")}
                 <span className="text-brand-gold font-sans text-2xl font-light">↗</span>
               </span>

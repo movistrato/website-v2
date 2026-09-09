@@ -172,7 +172,102 @@
   "Contact": {
     "headline": "THE NEXT CHAPTER STARTS WITH A CONVERSATION.",
     "cta": "CONTACT MOVISTRATO",
-    "label": "CONTACT / INITIATION"
+    "label": "CONTACT / INITIATION",
+    "page_badge": "04 // DIRECT CHANNEL",
+    "page_title": "A conversation can be the beginning.",
+    "page_subtitle": "Questions regarding Movistrato, FARO, technology, or partnerships? We speak directly with those who build and those who learn.",
+    "metadata_title": "Contact — Movistrato",
+    "metadata_desc": "Reach out directly to the Movistrato team regarding software products, technology, and partnerships.",
+    "topics": {
+      "label": "CONTACT TOPIC",
+      "faro": "Product / FARO",
+      "tech": "Technology",
+      "partners": "Partnerships",
+      "general": "General"
+    },
+    "form": {
+      "name_label": "01 / NAME",
+      "name_placeholder": "// your name or alias",
+      "email_label": "02 / EMAIL",
+      "email_placeholder": "// email@domain.com",
+      "org_label": "03 / ORGANIZATION",
+      "org_optional": "(Optional)",
+      "org_placeholder": "// company, studio, or project",
+      "topic_label": "04 / TOPIC",
+      "message_label": "05 / MESSAGE",
+      "message_placeholder": "// share your proposal, technical inquiry, or perspective...",
+      "privacy_notice": "Your information is used exclusively to respond to your message.",
+      "privacy_link": "Privacy",
+      "submit_cta": "SEND MESSAGE →",
+      "submitting_cta": "TRANSMITTING..."
+    },
+    "direct": {
+      "section_label": "02 // DIRECT CHANNELS",
+      "title": "Direct Channels",
+      "subtitle": "Direct line to the core engineering and founding team.",
+      "email_label": "PRIMARY INBOX // INQUIRIES",
+      "email_address": "contact@movistrato.com",
+      "copy_email": "COPY",
+      "copied": "COPIED ✓",
+      "response_label": "RESPONSE CADENCE",
+      "response_value": "Usually within 24–48 business hours",
+      "response_note": "Careful review of every transmitted inquiry.",
+      "links_label": "ECOSYSTEM & NETWORK",
+      "emblem_label": "MOVISTRATO // OFFICIAL EMBLEM",
+      "emblem_sub": "Technical rigor & product architecture"
+    },
+    "feedback": {
+      "v1_badge": "SYSTEM V1 // PREVIEW MODE",
+      "v1_notice": "Interface validation completed. Production server delivery will be enabled in milestone V3.",
+      "err_name": "Please provide your name.",
+      "err_email": "Please provide a valid email address.",
+      "err_message": "Message must be at least 10 characters."
+    },
+    "standards": {
+      "badge": "03 // DIALOGUE PRINCIPLES",
+      "title": "Communication Commitment",
+      "subtitle": "We approach every transmitted inquiry with the same rigor we invest in our software.",
+      "card1_num": "01",
+      "card1_tag": "DIRECT ENGINEERING",
+      "card1_title": "Zero Sales Intermediaries",
+      "card1_desc": "Your inquiry reaches Movistrato founders and core engineers directly. No sales representatives, no automated bot triage.",
+      "card2_num": "02",
+      "card2_tag": "PRIVACY",
+      "card2_title": "Strict Confidentiality",
+      "card2_desc": "Concepts, technical feedback, and perspectives shared with us are treated confidentially. We never share contacts or feed marketing pools.",
+      "card3_num": "03",
+      "card3_tag": "PRODUCT FOCUS",
+      "card3_title": "Exclusive Product Focus",
+      "card3_desc": "Movistrato is solely a software product company. We do not take client contract work, bespoke buildouts, or agency services."
+    },
+    "faq": {
+      "badge": "04 // FREQUENT INQUIRIES",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Clear answers regarding our operations, FARO, and direct communications.",
+      "hint": "Select an inquiry to expand the technical clarification.",
+      "items": [
+        {
+          "tag": "ACCESS // FARO",
+          "q": "How can I participate in FARO closed testing?",
+          "a": "Select 'Product / FARO' in the form above. Early access slots are allocated on a rolling basis to users interested in evaluating our adaptive learning system."
+        },
+        {
+          "tag": "MODEL // STRUCTURE",
+          "q": "Does Movistrato build custom client software?",
+          "a": "No. We do not provide client agency services. All engineering attention and capital are directed toward our proprietary software ecosystem."
+        },
+        {
+          "tag": "COLLABORATION // NETWORK",
+          "q": "Are you open to technical or platform partnerships?",
+          "a": "Yes. We evaluate partnerships with educational entities, computational linguistics researchers, and infrastructure teams that align with our engineering standards."
+        },
+        {
+          "tag": "SECURITY // AUDIT",
+          "q": "How can I report a security vulnerability?",
+          "a": "We welcome responsible disclosure. Select 'Technology' in the form or email technical details directly to contact@movistrato.com."
+        }
+      ]
+    }
   },
   "Footer": {
     "product": "PRODUCT",
@@ -185,7 +280,9 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "cookies": "Cookies",
-    "complaints_book": "Complaints Book"
+    "complaints_book": "Complaints Book",
+    "tagline": "Software products engineered with technical rigor, native architecture, and longevity.",
+    "all_rights_reserved": "All rights reserved."
   },
   "CookieConsent": {
     "label": "00 / PRIVACY & COMPLIANCE",
@@ -195,5 +292,29 @@
     "essential_only": "ESSENTIAL ONLY",
     "learn_more": "Learn more",
     "privacy_link": "Privacy Policy"
+  },
+  "PageLoader": {
+    "tagline": "MOVEMENT SUSTAINED BY STRUCTURE",
+    "initializing": "INITIALIZING MODULE",
+    "ready": "LINK ESTABLISHED",
+    "coordinates": "NODE 38.7223° N, 9.1393° W // LISBON · EU"
+  },
+  "NotFound": {
+    "badge": "ERROR 404 // NONEXISTENT COORDINATE",
+    "title": "The requested node does not exist in structure.",
+    "description": "The route you attempted to access may have been deprecated, migrated, or does not match any active data contract on the platform.",
+    "return_home": "Return to Home",
+    "contact_support": "Contact Support",
+    "status": "STATUS: 404_NOT_FOUND",
+    "integrity": "GLOBAL INTEGRITY: 100% // ISOLATED NODE"
+  },
+  "ServerError": {
+    "badge": "ERROR 500 // RUNTIME EXCEPTION",
+    "title": "Temporary state synchronization fault.",
+    "description": "The engine encountered an unhandled exception during node execution. Structural integrity was preserved and the incident was isolated.",
+    "reset": "Reset Node (Retry)",
+    "return_home": "Return to Home",
+    "status": "STATUS: 500_SERVER_ERROR",
+    "integrity": "GLOBAL INTEGRITY: 100% // PROTECTED NODE"
   }
 }

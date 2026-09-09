@@ -246,24 +246,22 @@ export function IdentitySection() {
               >
                 {/* Light Mode Logo */}
                 <Image 
-                  src="/brand/logo_maior_dark.png" 
+                  src="/brand/logo_dark_4k.png" 
                   alt="Movistrato Mark" 
                   fill 
                   className="object-contain dark:hidden drop-shadow-2xl opacity-90 p-12 lg:p-16"
-                  quality={100}
+                  quality={95}
                   sizes="(max-width: 1024px) 100vw, 70vw"
-                  priority
                 />
                 
                 {/* Dark Mode Logo */}
                 <Image 
-                  src="/brand/logo_maior_light.png" 
+                  src="/brand/logo_light_4k.png" 
                   alt="Movistrato Mark" 
                   fill 
                   className="object-contain hidden dark:block drop-shadow-2xl opacity-90 p-12 lg:p-16"
-                  quality={100}
+                  quality={95}
                   sizes="(max-width: 1024px) 100vw, 70vw"
-                  priority
                 />
               </motion.div>
               
