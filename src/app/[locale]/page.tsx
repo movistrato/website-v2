@@ -13,6 +13,7 @@ import { EngineeringSection } from '@/components/home/EngineeringSection';
 import { IdentitySection } from '@/components/home/IdentitySection';
 import { ContactSection } from '@/components/home/ContactSection';
 
+import { HeroAtmosphere } from '@/components/home/hero/HeroAtmosphere';
 import { SectionDivider } from '@/components/ui/SectionDivider';
 import { TickerMarquee } from '@/components/motion/TickerMarquee';
 
@@ -25,61 +26,79 @@ export default function HomePage() {
         <ScrollExitWrapper>
           <section className="relative w-full min-h-dvh flex flex-col justify-center overflow-hidden bg-background pt-22 lg:pt-24 pb-6 lg:pb-12">
           
-          {/* Subtle engineering/research grid background */}
+          {/* Subtle engineering grid background */}
           <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-size-[40px_40px] opacity-[0.03] dark:opacity-[0.05]" aria-hidden="true" />
           
-          {/* Ambient Glow */}
-          <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[60vw] h-[40vh] bg-brand-gold/5 dark:bg-brand-gold/10 blur-[120px] rounded-full pointer-events-none z-0" aria-hidden="true" />
+          {/* Intelligent, living ambient warmth field (Autonomous & interactive, zero UI noise) */}
+          <HeroAtmosphere />
 
-          <Container className="px-6 lg:px-12 max-w-none flex-1 flex flex-col relative z-10 w-full h-full justify-center">
+          <Container className="px-6 lg:px-12 flex-1 flex flex-col relative z-10 w-full h-full justify-center">
             
             <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full mt-0 lg:mt-8 mb-4 lg:mb-8 gap-10 lg:gap-8">
               
-              {/* LEFT: Massive Serif Typography */}
-              <div className="w-full lg:w-[66%] xl:w-[68%] flex flex-col relative z-10 border-l-2 border-brand-gold/20 pl-6 lg:pl-10 pr-2 lg:pr-6">
+              {/* LEFT: Massive Editorial Serif Typography */}
+              <div className="w-full lg:w-[65%] xl:w-[66%] flex flex-col relative z-10 border-l-2 border-brand-gold/30 pl-6 lg:pl-10 pr-2 lg:pr-6">
                 <h1 className="font-display text-[clamp(2.5rem,8.4vw,8.5rem)] leading-[0.85] tracking-[-0.03em] text-foreground uppercase">
                   <HeroTitleLine><span className="block">{t('title_1')}</span></HeroTitleLine>
-                  {/* Editorial Italic Contrast with Brand Accent */}
-                  <HeroBlurLine delay={0.4} className="ml-[5%] lg:ml-[10%] text-brand-gold italic font-light tracking-normal lowercase origin-left">
-                    <span className="block bg-linear-to-r from-brand-gold to-amber-500 bg-clip-text text-transparent">{t('title_2')}</span>
+                  {/* Editorial Italic Contrast with Living Golden Warmth */}
+                  <HeroBlurLine delay={0.3} className="ml-[5%] lg:ml-[10%] text-brand-gold italic font-light tracking-normal lowercase origin-left">
+                    <span 
+                      className="block bg-[linear-gradient(110deg,#D9A62E_20%,#FFF6CC_48%,#D9A62E_75%)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer drop-shadow-[0_0_24px_rgba(217,166,46,0.3)]"
+                      style={{ WebkitTextFillColor: 'transparent' }}
+                    >
+                      {t('title_2')}
+                    </span>
                   </HeroBlurLine>
                   <HeroTitleLine delay={0.2}><span className="block ml-[10%] lg:ml-[20%]">{t('title_3')}</span></HeroTitleLine>
                 </h1>
               </div>
 
-              {/* RIGHT: Technical Data Grid / Abstract */}
-              <div className="w-full lg:w-[34%] xl:w-[32%] flex flex-col gap-8 lg:pb-2 relative z-10">
+              {/* RIGHT: Pure, Architectural Blueprint with Precision Hairline Beam */}
+              <div className="w-full lg:w-[35%] xl:w-[34%] flex flex-col gap-8 lg:pb-2 relative z-10">
                  
-                 <HeroFadeIn delay={0.6} className="font-mono text-xs leading-relaxed text-muted-foreground tracking-wide flex flex-col gap-6">
+                 <HeroFadeIn delay={0.5} className="font-mono text-xs leading-relaxed text-muted-foreground tracking-wide flex flex-col gap-6">
                    
                    {/* Abstract Text block */}
                    <div className="pr-4">
-                     <p className="flex items-center gap-3 mb-6">
-                       <span className="bg-brand-gold/10 dark:bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded-none font-medium tracking-widest text-[9px] border border-brand-gold/30">001</span>
-                       <span className="text-foreground tracking-widest uppercase">{t('system_status')}</span>
-                       <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse ml-auto" />
+                     <p className="flex items-center gap-3 mb-4">
+                       <span className="bg-brand-gold/10 dark:bg-brand-gold/20 text-brand-gold px-2 py-0.5 rounded-none font-medium tracking-widest text-[9px] border border-brand-gold/30">
+                         001
+                       </span>
+                       <span className="text-foreground tracking-widest uppercase font-semibold text-[11px]">
+                         {t('system_status')}
+                       </span>
+                       <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse ml-auto" />
                      </p>
-                     <p className="text-sm border-l border-border/60 pl-4">{t('abstract')}</p>
+                     <p className="text-sm border-l-2 border-brand-gold/30 pl-4 text-muted-foreground/90 font-sans leading-relaxed">
+                       {t('abstract')}
+                     </p>
                    </div>
                    
-                   {/* HUD / Blueprint Data Module */}
-                   <div className="grid grid-cols-2 gap-px bg-border/40 border border-border/40 w-full shadow-2xl">
-                     <div className="bg-surface/80 backdrop-blur-md p-4 flex flex-col gap-2">
-                       <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80">{t('product_label')}</span>
-                       <span className="font-serif italic text-lg text-foreground">{t('product_name')}</span>
-                     </div>
-                     <div className="bg-surface/80 backdrop-blur-md p-4 flex flex-col gap-2">
-                       <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80">{t('focus_label')}</span>
-                       <span className="font-mono text-[10px] uppercase tracking-widest text-foreground mt-auto">{t('focus_value')}</span>
-                     </div>
-                     <div className="bg-surface/80 backdrop-blur-md p-4 flex flex-col gap-2 col-span-2">
-                       <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80 flex justify-between">
-                         <span>{t('platforms_label')}</span>
-                         <span className="text-brand-gold">{t('platforms_badge')}</span>
-                       </span>
-                       <div className="flex justify-between items-end mt-2">
-                         <span className="font-mono text-xs uppercase text-foreground">{t('platforms_list')}</span>
-                         <span className="font-mono text-[9px] text-muted-foreground">{t('dev_badge')}</span>
+                   {/* Precision Architectural Blueprint Card with Hairline Light Trace */}
+                   <div className="relative p-[1px] overflow-hidden group shadow-2xl">
+                     {/* Continuous 4s perimeter light tracer */}
+                     <div 
+                       className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_310deg,rgba(217,166,46,0.55)_360deg)] animate-beam-spin pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity duration-500" 
+                       aria-hidden="true" 
+                     />
+                     <div className="relative grid grid-cols-2 gap-px bg-border/40 w-full">
+                       <div className="bg-surface/85 backdrop-blur-md p-4 flex flex-col gap-2 transition-colors hover:bg-surface">
+                         <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80">{t('product_label')}</span>
+                         <span className="font-serif italic text-xl text-foreground font-medium">{t('product_name')}</span>
+                       </div>
+                       <div className="bg-surface/85 backdrop-blur-md p-4 flex flex-col gap-2 transition-colors hover:bg-surface">
+                         <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80">{t('focus_label')}</span>
+                         <span className="font-mono text-[10px] uppercase tracking-widest text-foreground font-semibold mt-auto">{t('focus_value')}</span>
+                       </div>
+                       <div className="bg-surface/85 backdrop-blur-md p-4 flex flex-col gap-2 col-span-2 transition-colors hover:bg-surface">
+                         <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80 flex justify-between">
+                           <span>{t('platforms_label')}</span>
+                           <span className="text-brand-gold font-medium">{t('platforms_badge')}</span>
+                         </span>
+                         <div className="flex justify-between items-end mt-2">
+                           <span className="font-mono text-xs uppercase text-foreground font-medium tracking-wider">{t('platforms_list')}</span>
+                           <span className="font-mono text-[9px] text-muted-foreground/90 bg-border/20 px-1.5 py-0.5 border border-border/40">{t('dev_badge')}</span>
+                         </div>
                        </div>
                      </div>
                    </div>
