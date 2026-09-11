@@ -6,11 +6,7 @@ import Image from 'next/image';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Container } from '@/components/layout/Container';
 import { AndroidLogo, AppleLogo, WindowsLogo, Globe } from '@phosphor-icons/react';
-import {
-  ContextualEngineGraphic,
-  NativeRenderingGraphic,
-  AdaptiveDesignGraphic,
-} from '@/components/home/product/ProductFeatureGraphics';
+import { FaroInteractiveEngine } from '@/components/home/product/FaroInteractiveEngine';
 
 // --- ANIMATION VARIANTS ---
 
@@ -19,7 +15,7 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
       delayChildren: 0.1
     }
   }
@@ -29,37 +25,18 @@ const textVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
-    y: 0,
+    y: 0, 
     transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }
   }
 };
 
-const desktopImageVariants: Variants = {
-  hidden: { opacity: 0, y: 100, scale: 0.95 },
+const viewportVariants: Variants = {
+  hidden: { opacity: 0, y: 40, scale: 0.98 },
   visible: { 
     opacity: 1, 
     y: 0,
     scale: 1,
-    transition: { duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }
-  }
-};
-
-const mobileImageVariants: Variants = {
-  hidden: { opacity: 0, x: 50, y: 20 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }
-  }
-};
-
-const ctaVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }
   }
 };
 
@@ -67,7 +44,7 @@ const featureCardVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { 
     opacity: 1, 
-    transition: { duration: 0.7, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
@@ -76,16 +53,25 @@ export function ProductSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative w-full min-h-screen py-12 lg:py-20 bg-background text-foreground overflow-hidden flex flex-col justify-center">
+    <section className="relative w-full min-h-screen py-16 lg:py-24 bg-background text-foreground overflow-hidden flex flex-col justify-center">
       
-      {/* Consistent Background Grid */}
+      {/* Precision HUD Corner Ticks */}
+      <div className="absolute top-6 left-6 w-4 h-4 border-l border-t border-border/40 pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-6 right-6 w-4 h-4 border-r border-t border-border/40 pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-6 left-6 w-4 h-4 border-l border-b border-border/40 pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-6 right-6 w-4 h-4 border-r border-b border-border/40 pointer-events-none" aria-hidden="true" />
+
+      {/* Engineering Blueprint Grid Background */}
       <div 
-        className="absolute inset-[-20%] z-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] dark:opacity-[0.05]" 
+        className="absolute inset-[-20%] z-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
         aria-hidden="true" 
       />
 
-      {/* Ambient Glow - identical to rest of website */}
-      <div className="absolute top-1/4 right-1/4 w-[60vw] h-[40vh] bg-brand-gold/5 dark:bg-brand-gold/10 blur-[150px] rounded-full pointer-events-none z-0" aria-hidden="true" />
+      {/* Breathing Ambient Warmth Field */}
+      <div 
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[45vh] bg-brand-gold/6 dark:bg-brand-gold/10 blur-[160px] rounded-full pointer-events-none z-0" 
+        aria-hidden="true" 
+      />
       
       <Container className="px-6 lg:px-12 max-w-none relative z-10 w-full flex-1 flex flex-col justify-center">
         
@@ -94,294 +80,243 @@ export function ProductSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.1 }}
-          className="w-full flex flex-col gap-8 lg:gap-14"
+          className="w-full flex flex-col gap-12 lg:gap-16"
         >
           
-          {/* Base Layer: Text */}
+          {/* TOP: Monumental Architectural Product Header Plate */}
           <motion.div 
             variants={textVariants}
-            className="flex flex-col lg:flex-row justify-between items-start lg:items-start gap-8"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end w-full pb-8 border-b border-border/20"
           >
-            <div className="flex flex-col gap-6 w-full lg:w-[60%] relative">
-              {/* Technical grid marker */}
+            {/* LEFT: Product Designation & Architectural Specification Matrix */}
+            <div className="col-span-1 lg:col-span-7 flex flex-col gap-6">
               
-              <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-brand-gold rounded-full" />
-                {t('label')}
-              </span>
-              <h2 className="font-display text-[4rem] sm:text-[5rem] lg:text-[8rem] leading-[0.85] tracking-tighter text-foreground uppercase flex items-baseline">
+              <div className="flex items-center gap-2.5">
+                <span className="w-1.5 h-1.5 bg-brand-gold rotate-45 block" aria-hidden="true" />
+                <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground font-semibold">
+                  {t('label')}
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-brand-gold uppercase font-medium bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20 ml-2">
+                  SISTEMA PRINCIPAL
+                </span>
+              </div>
+
+              <h2 className="font-display text-[4rem] sm:text-[5.5rem] lg:text-[7.5rem] leading-[0.88] tracking-tighter text-foreground uppercase flex items-baseline">
                 <span>{t('name')}</span>
-                <span className="text-brand-gold text-[0.25em] sm:text-[0.3em] font-mono ml-4 font-normal tracking-widest">[ 01 ]</span>
+                <span className="text-brand-gold text-[0.25em] sm:text-[0.3em] font-mono ml-4 font-normal tracking-widest drop-shadow-[0_0_20px_rgba(217,166,46,0.3)]">
+                  [ 01 ]
+                </span>
               </h2>
 
-              {/* Technical specifications underneath FARO on PC/large screens */}
-              <div className="hidden lg:flex flex-col gap-3 mt-8 font-mono text-[10px] tracking-widest text-muted-foreground/80 border-t border-border/50 pt-6 w-fit">
-                <div className="flex gap-12 justify-between min-w-[260px]">
-                  <span>{t('specs.status_label')}</span>
-                  <span className="text-brand-gold font-semibold">{t('specs.status_value')}</span>
+              {/* Integrated Technical Specifications Matrix */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border/40 border border-border/40 mt-2 font-mono text-[9px] tracking-widest uppercase">
+                <div className="bg-surface/40 dark:bg-surface/20 p-3 flex flex-col gap-1">
+                  <span className="text-muted-foreground">{t('specs.status_label')}</span>
+                  <span className="text-brand-gold font-semibold flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block" />
+                    {t('specs.status_value')}
+                  </span>
                 </div>
-                <div className="flex gap-12 justify-between min-w-[260px]">
-                  <span>{t('specs.version_label')}</span>
-                  <span className="text-foreground">{t('specs.version_value')}</span>
+                <div className="bg-surface/40 dark:bg-surface/20 p-3 flex flex-col gap-1">
+                  <span className="text-muted-foreground">{t('specs.version_label')}</span>
+                  <span className="text-foreground font-medium">{t('specs.version_value')}</span>
                 </div>
-                <div className="flex gap-12 justify-between min-w-[260px]">
-                  <span>{t('specs.location_label')}</span>
-                  <span className="text-foreground">{t('specs.location_value')}</span>
+                <div className="bg-surface/40 dark:bg-surface/20 p-3 flex flex-col gap-1">
+                  <span className="text-muted-foreground">{t('specs.location_label')}</span>
+                  <span className="text-foreground font-medium">{t('specs.location_value')}</span>
+                </div>
+                <div className="bg-surface/40 dark:bg-surface/20 p-3 flex flex-col gap-1">
+                  <span className="text-muted-foreground">ARQUITETURA</span>
+                  <span className="text-foreground font-medium">RUST NATIVE</span>
                 </div>
               </div>
+
             </div>
             
-            <div className="flex flex-col gap-8 w-full lg:w-[35%] mb-2 lg:mb-4 lg:pt-8">
-              <p className="font-sans text-base lg:text-xl text-muted-foreground leading-relaxed max-w-md">
+            {/* RIGHT: Editorial Proposition & Live Telemetry Strip */}
+            <div className="col-span-1 lg:col-span-5 flex flex-col gap-6 lg:pl-4">
+              <p className="font-sans text-base sm:text-lg text-foreground/85 dark:text-foreground/80 leading-relaxed">
                 {t('description')}
               </p>
               
-              {/* Technical Specs Grid */}
-              <div className="grid grid-cols-2 gap-px bg-border/40 border border-border/40 w-full mt-4">
-                <div className="bg-background p-4 flex flex-col gap-1">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Engine</span>
-                  <span className="font-mono text-xs text-foreground">Rust Native Core</span>
+              {/* Telemetry Strip */}
+              <div className="grid grid-cols-2 gap-px bg-border/40 border border-border/40 w-full">
+                <div className="bg-surface/30 dark:bg-surface/15 p-3 flex flex-col gap-0.5">
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">Latência Percetiva</span>
+                  <span className="font-mono text-xs text-brand-gold font-medium">&lt; 16ms (120 FPS)</span>
                 </div>
-                <div className="bg-background p-4 flex flex-col gap-1">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Latency</span>
-                  <span className="font-mono text-xs text-foreground">&lt; 16ms</span>
+                <div className="bg-surface/30 dark:bg-surface/15 p-3 flex flex-col gap-0.5">
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">Consumo de Memória</span>
+                  <span className="font-mono text-xs text-foreground font-medium">~45 MB RAM (Cold)</span>
                 </div>
-                <div className="bg-background p-4 flex flex-col gap-1">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Footprint</span>
-                  <span className="font-mono text-xs text-foreground">~45 MB RAM</span>
+                <div className="bg-surface/30 dark:bg-surface/15 p-3 flex flex-col gap-0.5">
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">Sincronização</span>
+                  <span className="font-mono text-xs text-brand-gold font-medium flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-ping" />
+                    Real-time Zero-Loss
+                  </span>
                 </div>
-                <div className="bg-background p-4 flex flex-col gap-1">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Sync</span>
-                  <span className="font-mono text-xs text-brand-gold animate-pulse">Real-time</span>
+                <div className="bg-surface/30 dark:bg-surface/15 p-3 flex flex-col gap-0.5">
+                  <span className="font-mono text-[8px] uppercase tracking-widest text-muted-foreground">Cadência de Render</span>
+                  <span className="font-mono text-xs text-emerald-500 font-medium">120 Hz Nativo</span>
                 </div>
               </div>
 
-              {/* Added: UI Density - Platform Icons */}
-              <div className="flex items-center gap-4 pt-4">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <AppleLogo weight="fill" className="w-5 h-5 hover:text-foreground transition-colors" />
-                  <WindowsLogo weight="fill" className="w-5 h-5 hover:text-foreground transition-colors" />
-                  <AndroidLogo weight="fill" className="w-5 h-5 hover:text-foreground transition-colors" />
-                  <Globe weight="bold" className="w-5 h-5 hover:text-foreground transition-colors" />
+              {/* Supported Platforms Strip */}
+              <div className="flex items-center justify-between pt-1 text-muted-foreground">
+                <div className="flex items-center gap-3">
+                  <span title="Windows Native"><WindowsLogo weight="fill" className="w-4 h-4 hover:text-brand-gold transition-colors" /></span>
+                  <span title="Android Vulkan"><AndroidLogo weight="fill" className="w-4 h-4 hover:text-brand-gold transition-colors" /></span>
+                  <span title="macOS / iOS"><AppleLogo weight="fill" className="w-4 h-4 hover:text-brand-gold transition-colors" /></span>
+                  <span title="Web Assembly"><Globe weight="bold" className="w-4 h-4 hover:text-brand-gold transition-colors" /></span>
                 </div>
-                <span className="text-[10px] uppercase font-mono tracking-widest text-muted-foreground/60">
-                  Universal Native
+                <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground/80">
+                  UNIVERSAL NATIVE RUNTIME
+                </span>
+              </div>
+
+            </div>
+          </motion.div>
+
+          {/* CENTER: The FARO Engineering Viewport Chassis (Showcase) */}
+          <motion.div 
+            variants={viewportVariants}
+            className="relative w-full max-w-[1240px] mx-auto z-10"
+          >
+            {/* Precision Corner Ticks for the Showcase Chassis */}
+            <div className="absolute -top-2 -left-2 w-3 h-3 border-l border-t border-brand-gold/60 pointer-events-none z-30" aria-hidden="true" />
+            <div className="absolute -top-2 -right-2 w-3 h-3 border-r border-t border-brand-gold/60 pointer-events-none z-30" aria-hidden="true" />
+            <div className="absolute -bottom-2 -left-2 w-3 h-3 border-l border-b border-brand-gold/60 pointer-events-none z-30" aria-hidden="true" />
+            <div className="absolute -bottom-2 -right-2 w-3 h-3 border-r border-b border-brand-gold/60 pointer-events-none z-30" aria-hidden="true" />
+
+            {/* Chassis Header Bar */}
+            <div className="w-full bg-surface/90 dark:bg-surface/80 backdrop-blur-md border border-border/70 border-b-0 px-4 py-2.5 flex items-center justify-between relative z-20">
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 border border-red-600/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 border border-amber-600/40" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 border border-emerald-600/40" />
+                <span className="font-mono text-[10px] tracking-widest uppercase text-foreground/80 font-medium ml-3">
+                  FARO WORKSPACE // NATIVE CLIENT v01.00
+                </span>
+              </div>
+              <div className="hidden sm:flex items-center gap-3 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                  DIRECTX 12 · VULKAN NDK
+                </span>
+                <span className="text-brand-gold font-medium bg-brand-gold/10 px-2 py-0.5 border border-brand-gold/20">
+                  120 FPS LOCKED
                 </span>
               </div>
             </div>
-          </motion.div>
 
-          {/* Overlay Layer: 3D Responsive Mockups */}
-          {/* Overlay Layer: Clean High-End Mockups */}
-          <div className="relative w-full pt-12 pb-20 lg:pt-24 lg:pb-32 px-4">
-            
-            {/* Central Canvas Wrapper - Locks proportions and positioning for all devices */}
-            <div className="relative w-[95%] sm:w-[85%] lg:w-[75%] max-w-[850px] mx-auto">
+            {/* Main Viewport Screen Frame */}
+            <div className="relative w-full aspect-[16/9.5] sm:aspect-[16/9] bg-[#0A0A0A] border border-border/70 overflow-hidden shadow-2xl group">
               
-              {/* Floating UI Badge - Left */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute top-[-10%] sm:top-[-5%] left-[5%] z-20 pointer-events-none hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-sm"
-              >
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Engine: Native</span>
-              </motion.div>
+              {/* Subtle Screen Reflection and Grid Texture */}
+              <div className="absolute inset-0 z-20 pointer-events-none bg-[linear-gradient(135deg,rgba(255,255,255,0.03)_0%,transparent_50%,rgba(0,0,0,0.2)_100%)]" />
+              <div className="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(ellipse_at_top,rgba(217,166,46,0.04),transparent_60%)]" />
 
-              {/* Floating UI Badge - Right */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-[15%] right-[-5%] sm:right-[-10%] z-20 pointer-events-none hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md border border-white/10 shadow-sm"
-              >
-                <span className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">Latency</span>
-                <span className="font-mono text-[10px] text-brand-gold">&lt; 16ms</span>
-              </motion.div>
+              {/* High-Resolution Real Dashboard Screenshot */}
+              <Image
+                src="/products/faro/faro-desktop-dashboard.png"
+                alt="FARO Desktop Native Workspace"
+                fill
+                className="object-cover object-left-top z-10 transition-transform duration-700 group-hover:scale-[1.01]"
+                sizes="(max-width: 1280px) 100vw, 1240px"
+                quality={95}
+                priority={false}
+              />
 
-              {/* Desktop Mockup (Laptop) */}
+              {/* Floating Tactical Inspection Window (Context Lesson Exercise) */}
               <motion.div 
-                variants={desktopImageVariants}
-                className="relative w-full flex flex-col items-center z-10 group"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-[70%] sm:w-[46%] lg:w-[42%] max-w-[480px] aspect-[16/9.5] z-30 bg-surface/95 dark:bg-surface/90 backdrop-blur-xl border border-brand-gold/50 shadow-[0_20px_50px_rgba(0,0,0,0.7)] p-2 sm:p-2.5 flex flex-col justify-between overflow-hidden group/tac"
               >
-                {/* Laptop Screen Bezel */}
-                <div className="relative w-full aspect-[16/10] bg-[#0a0a0a] rounded-t-xl sm:rounded-t-2xl lg:rounded-t-3xl p-[1.5%] sm:p-[2%] border border-[#333] shadow-md flex flex-col justify-between overflow-hidden">
-                  
-                  {/* Screen Glare (Glass reflection) */}
-                  <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-white/0 via-white/[0.02] to-white/[0.08] mix-blend-overlay" />
-                  <div className="absolute -inset-[100%] z-20 pointer-events-none bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.05)_50%,transparent_55%)] translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[2s] ease-in-out" />
-
-                  {/* Webcam */}
-                  <div className="absolute top-[1.5%] sm:top-[2%] left-1/2 -translate-x-1/2 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-black ring-1 ring-white/20 z-30" />
-                  
-                  {/* Screen inner content */}
-                  <div className="relative w-full h-full rounded-sm sm:rounded-md overflow-hidden bg-background border border-white/10 mt-[1%] z-10 shadow-inner">
-                    <Image
-                      src="/products/faro/faro-desktop-dashboard.png"
-                      alt="FARO Dashboard Interface"
-                      fill
-                      className="object-cover object-left-top"
-                      sizes="(max-width: 768px) 100vw, 85vw"
-                      quality={90}
-                    />
+                {/* Tactical Window Top Bar */}
+                <div className="flex items-center justify-between pb-1.5 mb-1 border-b border-border/40 font-mono text-[8px] sm:text-[9px] tracking-widest uppercase">
+                  <div className="flex items-center gap-1.5 text-foreground font-semibold">
+                    <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-ping" />
+                    SESSÃO ATIVA // MOTOR CONTEXTUAL
                   </div>
-                  
-                  {/* Macbook bottom bezel logo area */}
-                  <div className="absolute bottom-1 sm:bottom-1.5 lg:bottom-2 left-1/2 -translate-x-1/2 font-mono text-[4px] sm:text-[6px] text-white/30 uppercase tracking-widest hidden sm:block z-30">
-                    MOVISTRATO
-                  </div>
+                  <span className="text-brand-gold font-medium bg-brand-gold/15 px-1.5 py-0.5 border border-brand-gold/30">
+                    AO VIVO
+                  </span>
                 </div>
-                
-                {/* Laptop Base */}
-                <div className="relative w-[116%] h-2 sm:h-3 lg:h-4 bg-gradient-to-b from-[#e5e5e5] to-[#888888] dark:from-[#555] dark:to-[#111] rounded-b-xl sm:rounded-b-2xl lg:rounded-b-3xl border-t border-[#fff] dark:border-[#777] shadow-xl dark:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.6)] flex justify-center z-20">
-                  <div className="absolute top-0 w-full h-px bg-white/50 dark:bg-white/10" />
-                  <div className="w-[15%] h-1 sm:h-1.5 lg:h-2 bg-[#b3b3b3] dark:bg-[#0a0a0a] rounded-b-md shadow-[inset_0_1px_3px_rgba(0,0,0,0.5)]" />
+
+                {/* Real Lesson Detail Screenshot in native 16:9 ratio */}
+                <div className="relative w-full flex-1 rounded-sm overflow-hidden border border-border/40 bg-black">
+                  <Image
+                    src="/products/faro/faro-desktop-learning.png"
+                    alt="FARO Contextual Learning Session"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 60vw, 400px"
+                    quality={90}
+                  />
+                </div>
+
+                {/* Tactical Window Baseline */}
+                <div className="pt-1.5 mt-1 border-t border-border/30 flex items-center justify-between font-mono text-[7px] sm:text-[8px] tracking-widest text-muted-foreground uppercase">
+                  <span>DESAFIO CRU</span>
+                  <span className="text-brand-gold">RECONSTRUÇÃO REAL-TIME →</span>
                 </div>
               </motion.div>
 
-              {/* Mobile Mockup (Phone) - Positioned relative to the canvas */}
-              <motion.div 
-                variants={mobileImageVariants}
-                className="absolute bottom-[-10%] sm:bottom-[-15%] left-[-2%] sm:left-[-8%] w-[22%] min-w-[75px] max-w-[180px] aspect-[9/19.5] z-30"
+              {/* Bottom Architectural Chassis Footer Bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-9 bg-surface/90 dark:bg-surface/85 backdrop-blur-md border-t border-border/50 px-4 flex items-center justify-between z-25 font-mono text-[9px] tracking-widest text-muted-foreground uppercase">
+                <span className="hidden sm:flex items-center gap-2">
+                  <span className="w-1 h-1 bg-brand-gold rounded-none" />
+                  MOVISTRATO ENGINE CORE · DETERMINISTIC RUNTIME
+                </span>
+                <span className="text-brand-gold flex items-center gap-1">
+                  LATÊNCIA &lt; 16MS · TAXA 120 FPS
+                </span>
+              </div>
+
+            </div>
+
+            {/* Bottom Action Bar with Official CTA */}
+            <div className="w-full mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-4 sm:p-5 border border-border/50 bg-surface/30 dark:bg-surface/20 backdrop-blur-md">
+              <div className="flex items-center gap-4 text-xs font-mono tracking-widest text-muted-foreground uppercase">
+                <span className="text-foreground font-semibold">DISTRIBUIÇÃO:</span>
+                <span className="text-brand-gold">WIN32 NATIVE · ANDROID APK · WEB ASM</span>
+              </div>
+              <Link 
+                href="/products/faro"
+                className="group flex items-center gap-3 px-6 py-2.5 bg-foreground text-background dark:bg-brand-gold dark:text-black font-mono text-xs font-semibold tracking-widest uppercase hover:bg-brand-gold hover:text-black dark:hover:bg-white transition-all duration-300 shadow-md"
               >
-                <motion.div 
-                  animate={{ y: [0, -12, 0] }} 
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative w-full h-full"
-                >
-                  {/* Phone Frame */}
-                  <div className="relative w-full h-full bg-gradient-to-br from-[#e5e5e5] to-[#777777] dark:from-[#666] dark:to-[#0a0a0a] rounded-[15%] sm:rounded-[2.1rem] lg:rounded-[2.6rem] p-[2px] sm:p-[3px] shadow-lg dark:shadow-[0_15px_30px_-5px_rgba(0,0,0,0.5)]">
-                    
-                    <div className="relative w-full h-full bg-[#0a0a0a] rounded-[12%] sm:rounded-[2rem] lg:rounded-[2.5rem] p-[3px] sm:p-[6px] lg:p-[8px] border border-black overflow-hidden ring-1 ring-white/10">
-                      
-                      <div className="absolute inset-0 z-30 pointer-events-none bg-gradient-to-tr from-white/0 via-white/[0.04] to-white/[0.1] mix-blend-overlay" />
-                      
-                      <div className="absolute top-[4px] sm:top-[8px] lg:top-[12px] left-1/2 -translate-x-1/2 w-[35%] h-[8px] sm:h-[16px] lg:h-[20px] bg-black rounded-full z-20 flex justify-center items-center gap-1 sm:gap-1.5 shadow-md border border-white/10">
-                         <div className="w-1 h-1 rounded-full bg-[#1a1a1a] ring-1 ring-white/10" />
-                         <div className="w-1.5 sm:w-2.5 h-1 rounded-full bg-[#0a0a0a] ring-1 ring-white/5" />
-                      </div>
-
-                      <div className="relative w-full h-full rounded-[10%] sm:rounded-[1.6rem] lg:rounded-[2rem] overflow-hidden bg-background border border-white/5">
-                        <Image
-                          src="/products/faro/faro-desktop-learning.png"
-                          alt="FARO Learning Interface"
-                          fill
-                          className="object-cover object-left lg:object-center"
-                          sizes="(max-width: 768px) 30vw, 15vw"
-                          quality={90}
-                        />
-                      </div>
-
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-              
-              {/* CTA Overlay - Positioned relative to the canvas */}
-              <motion.div 
-                variants={ctaVariants}
-                className="absolute bottom-[5%] sm:bottom-[-5%] right-[-2%] sm:right-[-10%] z-40 pointer-events-auto"
-              >
-                 <div className="flex flex-col gap-2 p-3 sm:p-5 lg:p-6 bg-background/80 dark:bg-background/40 backdrop-blur-xl border border-border/50 shadow-[0_15px_30px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.6)] rounded-xl sm:rounded-2xl ring-1 ring-white/10 dark:ring-white/5">
-                   <span className="font-mono text-[8px] sm:text-[10px] tracking-widest text-muted-foreground uppercase">
-                     {t('platforms')}
-                   </span>
-                   <Link 
-                     href="/faro" 
-                     className="group flex items-center gap-2 sm:gap-3 font-mono text-[10px] sm:text-xs tracking-widest uppercase text-foreground hover:text-brand-gold transition-colors focus-visible:outline-none w-fit"
-                   >
-                     <span>{t('cta')}</span>
-                     <span className="text-lg sm:text-xl font-sans font-light leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span>
-                   </Link>
-                 </div>
-              </motion.div>
-
+                <span>{t('cta')}</span>
+                <span className="text-base font-sans font-light leading-none transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5">
+                  →
+                </span>
+              </Link>
             </div>
-          </div>
 
-        </motion.div>
+          </motion.div>
 
-        {/* --- PHASE 2: PRODUCT FEATURES DEEP-DIVE --- */}
-        <motion.div 
-          variants={reduce ? {} : containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          className="w-full mt-12 lg:mt-16 grid grid-cols-1 lg:grid-cols-3 gap-px bg-border/40 border border-border/40 relative z-10"
-        >
-          {/* Feature 1: Motor Contextual */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
-            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            
-            {/* Header Row with Icon & Telemetry Badge */}
-            <div className="flex items-center justify-between mb-2">
-              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                </svg>
+          {/* PHASE 2: FARO INTERACTIVE ENGINE (High-Craft Product Simulation & Benchmarks) */}
+          <motion.div 
+            variants={reduce ? {} : containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.15 }}
+            className="w-full flex flex-col gap-4 relative z-10"
+          >
+            <div className="flex items-center justify-between border-b border-border/20 pb-4">
+              <div className="flex items-center gap-2 font-mono text-[10px] tracking-widest uppercase text-brand-gold font-semibold">
+                <span className="w-1.5 h-1.5 bg-brand-gold rounded-none" />
+                ARQUITETURA & CAPACIDADES EM TEMPO REAL
               </div>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
-                01 // ALGORITMO
+              <span className="hidden sm:block font-mono text-[9px] tracking-widest uppercase text-muted-foreground">
+                [ MOTOR FARO v01.00 // SIMULAÇÃO DETERMINÍSTICA ]
               </span>
             </div>
 
-            {/* Custom Schematic Drawing: Contextual Engine */}
-            <ContextualEngineGraphic />
-
-            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
-              <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f1_title')}</h4>
-              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f1_body')}</p>
-            </div>
+            <FaroInteractiveEngine />
           </motion.div>
 
-          {/* Feature 2: Renderização Nativa */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
-            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            
-            {/* Header Row with Icon & Telemetry Badge */}
-            <div className="flex items-center justify-between mb-2">
-              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-              </div>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
-                02 // HARDWARE BARE-METAL
-              </span>
-            </div>
-
-            {/* Custom Schematic Drawing: Native Rendering */}
-            <NativeRenderingGraphic />
-
-            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
-              <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f2_title')}</h4>
-              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f2_body')}</p>
-            </div>
-          </motion.div>
-
-          {/* Feature 3: Design Adaptativo */}
-          <motion.div variants={featureCardVariants} className="group flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
-            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
-            
-            {/* Header Row with Icon & Telemetry Badge */}
-            <div className="flex items-center justify-between mb-2">
-              <div className="w-10 h-10 rounded-none border border-border/40 bg-surface flex items-center justify-center text-muted-foreground group-hover:text-brand-gold group-hover:border-brand-gold/50 transition-all duration-500 relative z-10 shadow-sm">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                </svg>
-              </div>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-brand-gold font-medium px-2 py-0.5 border border-brand-gold/30 bg-brand-gold/5">
-                03 // UI PROGRESSIVA
-              </span>
-            </div>
-
-            {/* Custom Schematic Drawing: Adaptive Design */}
-            <AdaptiveDesignGraphic />
-
-            <div className="flex flex-col gap-2.5 relative z-10 pt-4 border-t border-border/20">
-              <h4 className="font-sans text-xs font-semibold tracking-widest text-foreground uppercase group-hover:text-brand-gold transition-colors">{t('features.f3_title')}</h4>
-              <p className="text-xs lg:text-sm text-muted-foreground leading-relaxed">{t('features.f3_body')}</p>
-            </div>
-          </motion.div>
         </motion.div>
 
       </Container>

@@ -24,7 +24,7 @@ export default function HomePage() {
     <main className="w-full flex flex-col">
       <HeroReveal>
         <ScrollExitWrapper>
-          <section className="relative w-full min-h-dvh flex flex-col justify-center overflow-hidden bg-background pt-22 lg:pt-24 pb-6 lg:pb-12">
+          <section className="relative w-full min-h-dvh flex flex-col justify-center overflow-hidden bg-background pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 lg:pb-14">
           
           {/* Subtle engineering grid background */}
           <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-size-[40px_40px] opacity-[0.03] dark:opacity-[0.05]" aria-hidden="true" />
@@ -32,16 +32,16 @@ export default function HomePage() {
           {/* Intelligent, living ambient warmth field (Autonomous & interactive, zero UI noise) */}
           <HeroAtmosphere />
 
-          <Container className="px-6 lg:px-12 flex-1 flex flex-col relative z-10 w-full h-full justify-center">
+          <Container className="px-6 lg:px-12 flex-1 flex flex-col relative z-10 w-full h-full justify-center my-auto">
             
-            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full mt-0 lg:mt-8 mb-4 lg:mb-8 gap-10 lg:gap-8">
+            <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between w-full my-auto gap-8 lg:gap-10 xl:gap-14">
               
               {/* LEFT: Massive Editorial Serif Typography */}
-              <div className="w-full lg:w-[65%] xl:w-[66%] flex flex-col relative z-10 border-l-2 border-brand-gold/30 pl-6 lg:pl-10 pr-2 lg:pr-6">
-                <h1 className="font-display text-[clamp(2.5rem,8.4vw,8.5rem)] leading-[0.85] tracking-[-0.03em] text-foreground uppercase">
+              <div className="w-full lg:w-[58%] xl:w-[60%] flex flex-col relative z-10 border-l-2 border-brand-gold/30 pl-4 sm:pl-6 lg:pl-8 pr-2">
+                <h1 className="font-display text-[clamp(2.75rem,10.2vw,3.65rem)] sm:text-[clamp(3.5rem,7.5vw,4.5rem)] lg:text-[clamp(3.85rem,4.8vw,5.5rem)] xl:text-[clamp(4.6rem,5.2vw,6.4rem)] 2xl:text-[7rem] leading-[0.94] sm:leading-[0.92] lg:leading-[0.92] xl:leading-[0.90] tracking-[-0.03em] text-foreground uppercase">
                   <HeroTitleLine><span className="block">{t('title_1')}</span></HeroTitleLine>
                   {/* Editorial Italic Contrast with Living Golden Warmth */}
-                  <HeroBlurLine delay={0.3} className="ml-[5%] lg:ml-[10%] text-brand-gold italic font-light tracking-normal lowercase origin-left">
+                  <HeroBlurLine delay={0.3} className="ml-[4%] sm:ml-[6%] lg:ml-[8%] my-0.5 sm:my-1 text-brand-gold italic font-light tracking-normal lowercase origin-left">
                     <span 
                       className="block bg-[linear-gradient(110deg,#D9A62E_20%,#FFF6CC_48%,#D9A62E_75%)] bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer drop-shadow-[0_0_24px_rgba(217,166,46,0.3)]"
                       style={{ WebkitTextFillColor: 'transparent' }}
@@ -49,12 +49,12 @@ export default function HomePage() {
                       {t('title_2')}
                     </span>
                   </HeroBlurLine>
-                  <HeroTitleLine delay={0.2}><span className="block ml-[10%] lg:ml-[20%]">{t('title_3')}</span></HeroTitleLine>
+                  <HeroTitleLine delay={0.2}><span className="block ml-[8%] sm:ml-[12%] lg:ml-[16%]">{t('title_3')}</span></HeroTitleLine>
                 </h1>
               </div>
 
               {/* RIGHT: Pure, Architectural Blueprint with Precision Hairline Beam */}
-              <div className="w-full lg:w-[35%] xl:w-[34%] flex flex-col gap-8 lg:pb-2 relative z-10">
+              <div className="w-full lg:w-[42%] xl:w-[40%] max-w-lg lg:max-w-none flex flex-col gap-6 lg:gap-8 lg:pb-1 relative z-10">
                  
                  <HeroFadeIn delay={0.5} className="font-mono text-xs leading-relaxed text-muted-foreground tracking-wide flex flex-col gap-6">
                    

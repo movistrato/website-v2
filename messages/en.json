@@ -36,7 +36,7 @@
       "item3_body": "Optimized architecture and pristine rendering. Fewer abstractions, less latency. We build computing engines to run natively on each operating system."
     },
     "method_label": "THE MOVISTRATO METHOD",
-    "method_title": "Contextual Engineering.",
+    "method_title": "<accent>Contextual</accent> Engineering.",
     "method_body": "We don't build templates. We analyze how humans absorb information and design visual algorithms that respond to that pattern. Every millisecond of animation, every pixel of typography, and every data architecture decision serves a single purpose: to make technology invisible."
   },
   "Product": {
@@ -113,7 +113,7 @@
     "label": "07 / COMPANY",
     "statement_prefix": "FARO IS THE ",
     "statement_highlight": "FIRST CHAPTER.",
-    "description": "Movistrato is a software company built to develop digital products with technical rigor and longevity. FARO is our first product — and the starting point for everything we want to build.",
+    "description": "Movistrato is a software company built to develop digital products with technical rigor and longevity. FARO is our first product and the starting point for everything we want to build.",
     "fact_founded": "2026",
     "fact_location": "PORTUGAL",
     "fact_focus": "SOFTWARE PRODUCTS",

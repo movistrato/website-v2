@@ -36,7 +36,7 @@
       "item3_body": "Arquitetura otimizada e renderização imaculada. Menos abstrações, menos latência. Construímos motores de cálculo para rodar nativamente em cada sistema operativo."
     },
     "method_label": "O MÉTODO MOVISTRATO",
-    "method_title": "A Engenharia do Contexto.",
+    "method_title": "A Engenharia do <accent>Contexto</accent>.",
     "method_body": "Não construímos templates. Analisamos a forma como os humanos absorvem informação e desenhamos algoritmos visuais que respondem a esse padrão. Cada milissegundo de animação, cada pixel de tipografia e cada decisão de arquitetura de dados serve um único propósito: tornar a tecnologia invisível."
   },
   "Product": {
@@ -113,7 +113,7 @@
     "label": "07 / A EMPRESA",
     "statement_prefix": "O FARO É O ",
     "statement_highlight": "PRIMEIRO CAPÍTULO.",
-    "description": "A Movistrato é uma empresa de software criada para desenvolver produtos digitais com rigor técnico e longevidade. O FARO é o nosso primeiro produto — e o ponto de partida para tudo o que queremos construir.",
+    "description": "A Movistrato é uma empresa de software criada para desenvolver produtos digitais com rigor técnico e longevidade. O FARO é o nosso primeiro produto e o ponto de partida para tudo o que queremos construir.",
     "fact_founded": "2026",
     "fact_location": "PORTUGAL",
     "fact_focus": "PRODUTOS DE SOFTWARE",

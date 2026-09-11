@@ -9,6 +9,7 @@ import {
   ImmediateSyncGraphic,
   OfflineEngineGraphic,
 } from '@/components/home/platforms/PlatformsFeatureGraphics';
+import { PlatformsContinuityMatrix } from '@/components/home/platforms/PlatformsContinuityMatrix';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -69,23 +70,29 @@ export function PlatformsSection() {
           className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
         >
           
-          {/* LEFT: Copy */}
+          {/* LEFT: Copy & Animated Platform Continuity Matrix */}
           <div className="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
-            <motion.div variants={itemVariants} className="flex items-center gap-4 mb-8">
-              <span className="h-px w-8 bg-brand-gold" />
-              <span className="font-mono text-[10px] tracking-widest uppercase text-brand-gold">
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+              <span className="w-2 h-2 border border-brand-gold/60 rotate-45" aria-hidden="true" />
+              <span className="font-mono text-[10px] tracking-widest uppercase text-brand-gold font-medium">
                 {t('label')}
+              </span>
+              <span className="text-[9px] font-mono uppercase tracking-widest text-muted-foreground/60 border-l border-border/40 pl-3">
+                ZERO LOCK-IN
               </span>
             </motion.div>
             
             <motion.h2 
               variants={itemVariants}
-              className="font-display text-4xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight text-foreground mb-8 uppercase max-w-[15ch]"
+              className="font-display text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-[0.98] tracking-tight text-foreground mb-6"
             >
               {t.rich('title', {
                 highlight: (chunks) => (
-                  <span className="inline-block border border-foreground/20 rounded-full px-4 py-1 italic font-light mx-1 mt-1 lg:mt-2 bg-surface/50 backdrop-blur-sm shadow-sm lowercase transform -rotate-2">
-                    {chunks}
+                  <span className="relative inline-block text-brand-gold font-serif italic font-normal px-1">
+                    <span className="bg-gradient-to-r from-brand-gold via-amber-300 to-brand-gold bg-clip-text text-transparent">
+                      {chunks}
+                    </span>
+                    <span className="absolute -bottom-1 left-0 w-full h-[1.5px] bg-gradient-to-r from-brand-gold/80 via-amber-400/60 to-transparent" />
                   </span>
                 )
               })}
@@ -93,37 +100,29 @@ export function PlatformsSection() {
 
             <motion.p 
               variants={itemVariants}
-              className="text-base lg:text-lg text-muted-foreground leading-relaxed max-w-[42ch] mb-12"
+              className="font-sans text-base lg:text-lg text-foreground/80 leading-relaxed max-w-[44ch] mb-8"
             >
               {t.rich('description', {
                 highlight: (chunks) => (
                   <span className="text-foreground font-medium">{chunks}</span>
                 ),
                 underline: (chunks) => (
-                  <span className="underline decoration-brand-gold/50 underline-offset-4 text-foreground">{chunks}</span>
+                  <span className="text-foreground font-medium border-b border-brand-gold/40 pb-0.5">{chunks}</span>
                 )
               })}
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-col gap-6 border-l border-border pl-6">
-              <div className="flex flex-col gap-2">
-                <span className="font-mono text-[9px] tracking-widest uppercase text-foreground flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-brand-gold rounded-full animate-pulse" />
-                  {t('available_label')}
-                </span>
-                <span className="font-mono text-sm tracking-widest uppercase text-foreground">
-                  {t('web')} · {t('android')} · {t('windows')}
-                </span>
-              </div>
-              <div className="flex flex-col gap-2 mt-4 opacity-60">
-                <span className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-border rounded-full" />
-                  {t('planned_label')}
-                </span>
-                <span className="font-mono text-xs tracking-widest uppercase text-muted-foreground">
-                  {t('ios')} · {t('macos')} · {t('linux')}
-                </span>
-              </div>
+            <motion.div variants={itemVariants} className="w-full">
+              <PlatformsContinuityMatrix 
+                availableLabel={t('available_label')}
+                plannedLabel={t('planned_label')}
+                webText={t('web')}
+                androidText={t('android')}
+                windowsText={t('windows')}
+                iosText={t('ios')}
+                macosText={t('macos')}
+                linuxText={t('linux')}
+              />
             </motion.div>
           </div>
 

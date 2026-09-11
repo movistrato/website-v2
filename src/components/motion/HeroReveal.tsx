@@ -27,7 +27,7 @@ export function HeroReveal({ children }: { children: ReactNode }) {
 
 export function HeroTitleLine({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   return (
-    <div className={`overflow-hidden py-1 pr-6 -mr-6 ${className}`}>
+    <div className={`overflow-hidden py-2 -my-1 pr-8 -mr-6 ${className}`}>
       <motion.span
         className="block"
         variants={{

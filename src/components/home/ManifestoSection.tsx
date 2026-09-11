@@ -8,6 +8,10 @@ import {
   UbiquitousSyncGraphic,
   NativePerformanceGraphic,
 } from '@/components/home/manifesto/ManifestoCardGraphics';
+import {
+  ContextualAlgorithmGraphic,
+  NativeStackGraphic,
+} from '@/components/home/manifesto/MethodBentoGraphics';
 
 // --- ANIMATION VARIANTS ---
 
@@ -76,59 +80,81 @@ export function ManifestoSection() {
         aria-hidden="true" 
       />
       
-      <Container className="px-6 lg:px-12 max-w-none relative z-10 w-full flex-1 flex flex-col justify-center">
+      <Container className="px-6 lg:px-12 relative z-10 w-full flex-1 flex flex-col justify-center">
         <motion.div 
           variants={reduce ? {} : containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          className="flex flex-col gap-12 lg:gap-16 w-full"
+          viewport={{ once: false, amount: 0.25 }}
+          className="flex flex-col gap-12 lg:gap-14 w-full"
         >
           
-          {/* TOP: Grid with Label and Thesis */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end w-full">
+          {/* TOP: Harmonious Grid with Architectural Thesis Plate & Hero Headline */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch w-full">
             
-            {/* LEFT: Structural Label & Body */}
+            {/* LEFT: Structural Architectural Thesis Plate (Beautifully framed & fitted) */}
             <motion.div 
               variants={leftColumnVariants}
-              className="col-span-1 lg:col-span-4 flex flex-col gap-6 relative pb-2 lg:pb-4"
+              className="col-span-1 lg:col-span-4 flex flex-col justify-between p-6 sm:p-7 border border-border/50 bg-surface/30 dark:bg-surface/20 backdrop-blur-md relative group shadow-sm"
             >
-              <div className="flex flex-col gap-6">
-                {/* Decorative crosshair */}
-                <div className="absolute -top-12 -left-6 hidden lg:flex opacity-20 items-center justify-center">
-                   <div className="w-px h-4 bg-brand-gold absolute" />
-                   <div className="w-4 h-px bg-brand-gold absolute" />
+              {/* Precision Corner Tick Accents */}
+              <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-l border-t border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+              <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-r border-t border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+              <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-l border-b border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-r border-b border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+
+              {/* Plate Header */}
+              <div className="flex items-center justify-between pb-4 border-b border-border/40">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-1.5 h-1.5 bg-brand-gold rotate-45 block" aria-hidden="true" />
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-foreground font-semibold">
+                    {t('label')}
+                  </span>
                 </div>
-  
-                <div className="flex items-center gap-4">
-                   <div className="w-1.5 h-1.5 border border-brand-gold/60 rotate-45" aria-hidden="true" />
-                   <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
-                     {t('label')}
-                   </span>
-                </div>
-                
-                <div className="hidden lg:block w-full h-[1px] bg-border/40" aria-hidden="true" />
-                
-                <p className="font-sans text-base lg:text-lg text-muted-foreground leading-relaxed max-w-sm">
+                <span className="font-mono text-[9px] tracking-widest text-brand-gold uppercase font-medium bg-brand-gold/10 px-1.5 py-0.5 border border-brand-gold/20">
+                  MANIFESTO
+                </span>
+              </div>
+
+              {/* Body Text with Refined Editorial Leading & Contrast */}
+              <div className="py-6">
+                <p className="font-sans text-sm sm:text-[15px] lg:text-base text-foreground/85 dark:text-foreground/80 leading-relaxed">
                   {t('body')}
                 </p>
               </div>
+
+              {/* Plate Technical Baseline Rubric */}
+              <div className="pt-4 border-t border-border/40 flex items-center justify-between text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  PARADIGMA ADAPTATIVO
+                </span>
+                <span className="text-brand-gold font-mono font-medium">[ 01 ]</span>
+              </div>
             </motion.div>
   
-            {/* RIGHT: Massive Kinetic Thesis */}
-            <div className="col-span-1 lg:col-span-8 lg:pl-12 relative">
+            {/* RIGHT: Monumental Editorial Thesis Headline */}
+            <div className="col-span-1 lg:col-span-8 flex flex-col justify-center relative lg:pl-4">
               {/* Intense Breathing Ambient Glow */}
               <motion.div 
-                animate={{ opacity: [0.1, 0.4, 0.1], scale: [0.85, 1.15, 0.85] }}
+                animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.9, 1.1, 0.9] }}
                 transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-brand-gold/10 dark:bg-brand-gold/10 blur-[120px] rounded-full pointer-events-none z-0"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-brand-gold/8 dark:bg-brand-gold/12 blur-[120px] rounded-full pointer-events-none z-0"
               />
   
-              <motion.h2 variants={wordVariants} className="font-display text-[2.75rem] sm:text-5xl lg:text-[5.5rem] leading-[0.9] tracking-tighter text-foreground relative z-10">
+              <motion.h2 
+                variants={wordVariants} 
+                className="font-display text-[2.75rem] sm:text-5xl lg:text-[4.75rem] xl:text-[5.25rem] leading-[0.92] tracking-tight text-foreground relative z-10"
+              >
                 {t.rich('title', {
                   accent: (chunks) => (
-                    <span className="relative inline-block text-brand-gold italic px-2 py-0.5 bg-brand-gold/10 border-b-2 border-brand-gold font-normal">
-                      {chunks}
+                    <span className="relative inline-block text-brand-gold italic font-normal drop-shadow-[0_0_24px_rgba(217,166,46,0.25)]">
+                      <span className="relative z-10">{chunks}</span>
+                      {/* Architectural living light underline with smooth shimmer */}
+                      <span 
+                        className="absolute left-0 -bottom-1 w-full h-[2px] bg-[linear-gradient(90deg,#D9A62E,30%,#FFF6CC,50%,#D9A62E,70%,transparent)] bg-[length:200%_100%] animate-shimmer block" 
+                        aria-hidden="true" 
+                      />
                     </span>
                   )
                 })}
@@ -136,16 +162,20 @@ export function ManifestoSection() {
             </div>
           </div>
 
-          {/* BOTTOM: Premium UI Cards (The 3 Core Values) - Full Width */}
+          {/* BOTTOM: Premium UI Cards (The 3 Core Values) - Full Width with Active Pipeline */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 border border-border/40 relative z-10">
             
             {/* Card 1: Adaptação Contínua */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/50 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
               
               <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">01</span>
-                 <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
+                 <motion.div 
+                   className="w-1.5 h-1.5 bg-brand-gold"
+                   animate={{ opacity: [0.3, 1, 0.3], scale: [0.9, 1.25, 0.9] }}
+                   transition={{ duration: 2.4, repeat: Infinity, delay: 0 }}
+                 />
               </div>
 
               {/* Architectural Schematic Drawing: Adaptive Curve */}
@@ -158,12 +188,16 @@ export function ManifestoSection() {
             </motion.div>
 
             {/* Card 2: Continuidade Ubíqua */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/50 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
               
               <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">02</span>
-                 <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
+                 <motion.div 
+                   className="w-1.5 h-1.5 bg-brand-gold"
+                   animate={{ opacity: [0.3, 1, 0.3], scale: [0.9, 1.25, 0.9] }}
+                   transition={{ duration: 2.4, repeat: Infinity, delay: 0.8 }}
+                 />
               </div>
 
               {/* Architectural Schematic Drawing: Ubiquitous Sync */}
@@ -176,12 +210,16 @@ export function ManifestoSection() {
             </motion.div>
 
             {/* Card 3: Performance Nativa */}
-            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/40 transition-all duration-500 overflow-hidden relative cursor-default">
+            <motion.div variants={coreValueVariants} className="group flex flex-col justify-between p-6 lg:p-8 bg-background hover:bg-surface/50 transition-all duration-500 overflow-hidden relative cursor-default">
               <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--brand-gold)_25%,var(--brand-gold)_50%,transparent_50%,transparent_75%,var(--brand-gold)_75%,var(--brand-gold)_100%)] bg-[size:10px_10px] opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500" />
               
               <div className="flex justify-between items-start mb-2">
                  <span className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground group-hover:text-brand-gold transition-colors">03</span>
-                 <div className="w-1.5 h-1.5 bg-brand-gold/0 group-hover:bg-brand-gold rounded-none transition-colors duration-500" />
+                 <motion.div 
+                   className="w-1.5 h-1.5 bg-brand-gold"
+                   animate={{ opacity: [0.3, 1, 0.3], scale: [0.9, 1.25, 0.9] }}
+                   transition={{ duration: 2.4, repeat: Infinity, delay: 1.6 }}
+                 />
               </div>
 
               {/* Architectural Schematic Drawing: Native Performance */}
@@ -203,56 +241,136 @@ export function ManifestoSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className="w-full mt-12 lg:mt-16 pt-12 border-t border-border/10 grid grid-cols-1 lg:grid-cols-12 gap-8"
+          className="w-full mt-12 lg:mt-16 pt-12 border-t border-border/20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch"
         >
-          {/* Bento Header */}
-          <motion.div variants={coreValueVariants} className="col-span-1 lg:col-span-4 flex flex-col gap-6">
-            <span className="font-mono text-[10px] tracking-widest uppercase text-brand-gold flex items-center gap-2">
-               <span className="w-1.5 h-1.5 bg-brand-gold rounded-none" />
-               {t('method_label')}
-            </span>
-            <h3 className="font-display text-3xl lg:text-4xl leading-none tracking-tight text-foreground">
-              {t('method_title')}
-            </h3>
-            <p className="font-sans text-muted-foreground leading-relaxed">
-              {t('method_body')}
-            </p>
+          {/* Bento Header: Architectural Thesis Card */}
+          <motion.div 
+            variants={leftColumnVariants} 
+            className="col-span-1 lg:col-span-4 flex flex-col justify-between p-6 sm:p-7 border border-border/50 bg-surface/30 dark:bg-surface/20 backdrop-blur-md relative group shadow-sm"
+          >
+            {/* Precision Corner Ticks */}
+            <div className="absolute -top-1 -left-1 w-2.5 h-2.5 border-l border-t border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+            <div className="absolute -top-1 -right-1 w-2.5 h-2.5 border-r border-t border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+            <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 border-l border-b border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+            <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 border-r border-b border-brand-gold/60 pointer-events-none" aria-hidden="true" />
+
+            <div className="flex flex-col gap-5">
+              {/* Header Rubric */}
+              <div className="flex items-center justify-between pb-3.5 border-b border-border/30">
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-brand-gold rounded-none block" />
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-foreground font-semibold">
+                    {t('method_label')}
+                  </span>
+                </div>
+                <span className="font-mono text-[9px] tracking-widest text-brand-gold uppercase font-medium bg-brand-gold/10 px-1.5 py-0.5 border border-brand-gold/20">
+                  METHOD / 02
+                </span>
+              </div>
+
+              {/* Title with Editorial Newsreader & Living Accent Underline */}
+              <h3 className="font-display text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.05] tracking-tight text-foreground">
+                {t.rich('method_title', {
+                  accent: (chunks) => (
+                    <span className="relative inline-block text-brand-gold italic font-normal drop-shadow-[0_0_20px_rgba(217,166,46,0.25)]">
+                      <span className="relative z-10">{chunks}</span>
+                      <span 
+                        className="absolute left-0 -bottom-1 w-full h-[2px] bg-[linear-gradient(90deg,#D9A62E,30%,#FFF6CC,50%,#D9A62E,70%,transparent)] bg-[length:200%_100%] animate-shimmer block" 
+                        aria-hidden="true" 
+                      />
+                    </span>
+                  ),
+                })}
+              </h3>
+
+              {/* Body Text */}
+              <p className="font-sans text-xs sm:text-sm text-foreground/80 dark:text-foreground/75 leading-relaxed">
+                {t('method_body')}
+              </p>
+            </div>
+
+            {/* Bottom Architectural Baseline */}
+            <div className="pt-4 mt-6 border-t border-border/30 flex items-center justify-between text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-gold animate-pulse" />
+                INTERFACE INVISÍVEL
+              </span>
+              <span className="text-brand-gold font-mono font-medium">[ 120 FPS NATIVO ]</span>
+            </div>
           </motion.div>
 
-          {/* Bento Grid Visuals */}
-          <div className="col-span-1 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-px bg-border/20 border border-border/20">
+          {/* Bento Grid Visuals (2 High-Craft Interactive Cards) */}
+          <div className="col-span-1 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
             
-            {/* Bento Card 1: Contextual Graph */}
-            <motion.div variants={coreValueVariants} className="bg-background hover:bg-surface/30 p-8 aspect-video flex flex-col justify-between relative overflow-hidden group transition-colors duration-500">
-              <div className="flex justify-between items-start">
-                <span className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">Algoritmo</span>
+            {/* Bento Card 1: Contextual Algorithm */}
+            <motion.div 
+              variants={coreValueVariants} 
+              className="bg-background hover:bg-surface/40 p-6 sm:p-7 border border-border/60 hover:border-brand-gold/50 flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-sm"
+            >
+              {/* Corner accents */}
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 border-r border-t border-border group-hover:border-brand-gold/60 transition-colors" />
+              <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-l border-b border-border group-hover:border-brand-gold/60 transition-colors" />
+              
+              {/* Subtle background glow on hover */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(217,166,46,0.06),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+              <div className="flex justify-between items-start mb-2 relative z-10">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[10px] uppercase text-foreground font-semibold tracking-widest group-hover:text-brand-gold transition-colors">
+                    Algoritmo
+                  </span>
+                  <span className="font-mono text-[8px] text-muted-foreground tracking-wider uppercase border-l border-border/40 pl-2">
+                    CONTEXT MATRIX
+                  </span>
+                </div>
                 <div className="w-2 h-2 bg-brand-gold animate-pulse rounded-none" />
               </div>
-              <div className="flex items-end gap-1 h-24 mt-auto opacity-70">
-                {/* CSS Bar Chart - Animated */}
-                {[40, 70, 45, 90, 65, 100, 80].map((h, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{ height: "5%" }}
-                    whileInView={{ height: `${h}%` }}
-                    transition={{ duration: 1, delay: i * 0.1, ease: "easeOut" }}
-                    className="flex-1 bg-border/50 transition-colors duration-700 group-hover:bg-brand-gold/40" 
-                  />
-                ))}
+
+              {/* Interactive Graphic */}
+              <div className="my-auto py-2 relative z-10">
+                <ContextualAlgorithmGraphic />
+              </div>
+
+              <div className="pt-3 border-t border-border/20 flex items-center justify-between text-[8px] font-mono text-muted-foreground uppercase tracking-widest relative z-10">
+                <span>PADRÃO COGNITIVO</span>
+                <span className="text-brand-gold group-hover:translate-x-0.5 transition-transform">ADAPTAÇÃO REAL-TIME →</span>
               </div>
             </motion.div>
 
-            {/* Bento Card 2: Architecture Stack */}
-            <motion.div variants={coreValueVariants} className="bg-background hover:bg-surface/30 p-8 aspect-video flex flex-col justify-between relative overflow-hidden group transition-colors duration-500">
-              <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,var(--border)_25%,var(--border)_50%,transparent_50%,transparent_75%,var(--border)_75%,var(--border)_100%)] bg-[size:20px_20px] opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-700" />
-              <div className="flex justify-between items-start relative z-10">
-                <span className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">Stack Nativa</span>
-                <span className="font-mono text-[10px] text-brand-gold">120 FPS</span>
+            {/* Bento Card 2: Native Architecture Stack */}
+            <motion.div 
+              variants={coreValueVariants} 
+              className="bg-background hover:bg-surface/40 p-6 sm:p-7 border border-border/60 hover:border-brand-gold/50 flex flex-col justify-between relative overflow-hidden group transition-all duration-500 shadow-sm"
+            >
+              {/* Corner accents */}
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 border-r border-t border-border group-hover:border-brand-gold/60 transition-colors" />
+              <div className="absolute bottom-0 left-0 w-2.5 h-2.5 border-l border-b border-border group-hover:border-brand-gold/60 transition-colors" />
+              
+              {/* Subtle background glow on hover */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(217,166,46,0.06),transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+              <div className="flex justify-between items-start mb-2 relative z-10">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[10px] uppercase text-foreground font-semibold tracking-widest group-hover:text-brand-gold transition-colors">
+                    Stack Nativa
+                  </span>
+                  <span className="font-mono text-[8px] text-muted-foreground tracking-wider uppercase border-l border-border/40 pl-2">
+                    BARE-METAL PIPELINE
+                  </span>
+                </div>
+                <span className="font-mono text-[10px] text-brand-gold font-semibold tracking-wider">
+                  120 FPS
+                </span>
               </div>
-              <div className="flex flex-col gap-1 mt-auto relative z-10">
-                <div className="w-full h-8 border border-border/40 flex items-center px-4 font-mono text-[10px] text-muted-foreground group-hover:border-brand-gold/50 transition-colors uppercase tracking-widest bg-background">UI LAYER</div>
-                <div className="w-full h-8 border border-border/40 flex items-center px-4 font-mono text-[10px] text-muted-foreground group-hover:border-brand-gold/50 transition-colors uppercase tracking-widest bg-background">ENGINE CORE</div>
-                <div className="w-full h-8 border border-border/40 flex items-center px-4 font-mono text-[10px] text-muted-foreground group-hover:border-brand-gold/50 transition-colors uppercase tracking-widest bg-border/20">HARDWARE</div>
+
+              {/* Interactive Graphic */}
+              <div className="my-auto py-2 relative z-10">
+                <NativeStackGraphic />
+              </div>
+
+              <div className="pt-3 border-t border-border/20 flex items-center justify-between text-[8px] font-mono text-muted-foreground uppercase tracking-widest relative z-10">
+                <span>ZERO ABSTRAÇÕES</span>
+                <span className="text-brand-gold group-hover:translate-x-0.5 transition-transform">DESEMPENHO PURO →</span>
               </div>
             </motion.div>
 
